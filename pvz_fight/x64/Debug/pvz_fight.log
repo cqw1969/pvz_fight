@@ -1,2 +1,9 @@
 ﻿  main.cpp
-  pvz_fight.vcxproj -> D:\code\pvz_fight\x64\Debug\pvz_fight.exe
+  menu_scene.cpp
+  正在生成代码...
+main.obj : error LNK2001: 无法解析的外部符号 "public: virtual void __cdecl MenuScene::on_enter(void)" (?on_enter@MenuScene@@UEAAXXZ)
+main.obj : error LNK2001: 无法解析的外部符号 "public: virtual void __cdecl MenuScene::on_update(void)" (?on_update@MenuScene@@UEAAXXZ)
+main.obj : error LNK2001: 无法解析的外部符号 "public: virtual void __cdecl MenuScene::on_draw(void)" (?on_draw@MenuScene@@UEAAXXZ)
+main.obj : error LNK2001: 无法解析的外部符号 "public: virtual void __cdecl MenuScene::on_input(struct ExMessage const &)" (?on_input@MenuScene@@UEAAXAEBUExMessage@@@Z)
+main.obj : error LNK2001: 无法解析的外部符号 "public: virtual void __cdecl MenuScene::on_exit(void)" (?on_exit@MenuScene@@UEAAXXZ)
+D:\code\pvz_fight\x64\Debug\pvz_fight.exe : fatal error LNK1120: 5 个无法解析的外部命令
