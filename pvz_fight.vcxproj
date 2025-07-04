@@ -123,12 +123,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="animation.cpp" />
+    <ClCompile Include="atlas.cpp" />
+    <ClCompile Include="game_scene.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu_scene.cpp" />
+    <ClCompile Include="scene_manager.cpp" />
+    <ClCompile Include="selector_scene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="animation.h" />
+    <ClInclude Include="atlas.h" />
+    <ClInclude Include="game_scene.h" />
     <ClInclude Include="menu_scene.h" />
     <ClInclude Include="scene.h" />
+    <ClInclude Include="scene_manager.h" />
+    <ClInclude Include="selector_scene.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

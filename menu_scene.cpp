@@ -8,7 +8,11 @@ void MenuScene::on_update() {
 void MenuScene::on_draw() {
 	outtextxy(10, 10, _T("主菜单绘图内容"));
 }
-void MenuScene::on_input(const ExMessage& msg) {}
+void MenuScene::on_input(const ExMessage& msg) {
+	if (msg.message == WM_KEYDOWN) {
+		scene_manager.switch_to(SceneManager::SceneType::Selector);
+	}
+}
 void MenuScene::on_exit() {
 	std::cout << "主菜单退出" << std::endl;
 }

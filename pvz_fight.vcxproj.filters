@@ -21,12 +21,42 @@
     <ClCompile Include="menu_scene.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="game_scene.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="scene_manager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="selector_scene.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="atlas.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="animation.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="menu_scene.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="scene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="game_scene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="scene_manager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="selector_scene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atlas.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="animation.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
