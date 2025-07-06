@@ -1,6 +1,7 @@
 #pragma once
 #include "scene.h"
 #include "atlas.h"
+#include "timer.h"
 #include "camera.h"
 #include "animation.h"
 #include "scene_manager.h"
@@ -22,6 +23,7 @@ public:
 	void on_exit() override;
 	
 private:
+	Timer timer;
 	Camera camera;
 	Animation animation_peashooter_run_right;
 };

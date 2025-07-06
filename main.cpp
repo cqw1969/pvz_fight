@@ -201,7 +201,7 @@ int main() {
 		//处理数据
 		static DWORD last_tick_time=GetTickCount();
 		DWORD current_tick_time=GetTickCount();
-		DWORD delta_tick=current_tick_time-last_tick_time;
+		DWORD delta_tick=current_tick_time-last_tick_time;	//这里的秒数单位是毫秒(1秒相当于这里1000)
 		scene_manager.on_update(delta_tick);
 		last_tick_time = current_tick_time;;
 

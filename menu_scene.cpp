@@ -3,9 +3,15 @@ void MenuScene::on_enter() {
 	animation_peashooter_run_right.set_atlas(&atlas_peashooter_run_right);
 	animation_peashooter_run_right.set_interval(75);
 	animation_peashooter_run_right.set_loop(true);
-	;
+	
+	timer.set_wait_time(1000);
+	timer.set_one_shot(false);//非单次触发
+	timer.set_callback([]() {
+		std::cout << "定时器触发" << std::endl;
+		});
 }
 void MenuScene::on_update(int delta) {
+	timer.on_update(delta);
 	camera.on_update(delta);
 	animation_peashooter_run_right.on_update(delta);
 }
@@ -15,7 +21,8 @@ void MenuScene::on_draw() {
 }
 void MenuScene::on_input(const ExMessage& msg) {
 	if (msg.message == WM_KEYDOWN) {
-		scene_manager.switch_to(SceneManager::SceneType::Selector);
+		//scene_manager.switch_to(SceneManager::SceneType::Selector);
+		camera.shake(10,350);
 	}
 }
 void MenuScene::on_exit() {
