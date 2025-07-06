@@ -12,7 +12,7 @@ public:
 	~SelectorScene() = default;
 
 	void on_enter() override;
-	void on_update() override;
+	void on_update(int delta) override;
 	void on_draw() override;
 	void on_input(const ExMessage& msg) override;
 	void on_exit() override;

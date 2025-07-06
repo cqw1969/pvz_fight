@@ -26,8 +26,8 @@ void SceneManager::switch_to(SceneType type)
 	current_scene->on_enter();
 }
 
-void SceneManager::on_update() {
-	current_scene->on_update();
+void SceneManager::on_update(int delta) {
+	current_scene->on_update(delta);
 }
 
 void SceneManager::on_draw() {

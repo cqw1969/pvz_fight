@@ -2,7 +2,7 @@
 void SelectorScene::on_enter() {
 	std::cout << "进入角色选择场景" << std::endl;
 }
-void SelectorScene::on_update() {
+void SelectorScene::on_update(int delta) {
 	std::cout << "角色选择正在运行..." << std::endl;
 }
 void SelectorScene::on_draw() {
