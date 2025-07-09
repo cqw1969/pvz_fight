@@ -150,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
+    <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="pvz_fight.rc" />
