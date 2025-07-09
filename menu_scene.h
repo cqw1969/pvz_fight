@@ -7,7 +7,7 @@
 #include "scene_manager.h"
 #include <iostream>
 
-extern Atlas atlas_peashooter_run_right;
+extern IMAGE img_menu_background;
 extern SceneManager scene_manager;
 
 class MenuScene: public Scene
@@ -18,13 +18,11 @@ public:
 	
 	void on_enter() override;
 	void on_update(int delta) override;
-	void on_draw() override;
+	void on_draw(const Camera& camera) override;
 	void on_input(const ExMessage& msg) override;
 	void on_exit() override;
 	
 private:
-	Timer timer;
-	Camera camera;
-	Animation animation_peashooter_run_right;
+	
 };
 

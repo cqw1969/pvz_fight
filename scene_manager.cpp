@@ -30,8 +30,8 @@ void SceneManager::on_update(int delta) {
 	current_scene->on_update(delta);
 }
 
-void SceneManager::on_draw() {
-	current_scene->on_draw();
+void SceneManager::on_draw(const Camera& camera) {
+	current_scene->on_draw(camera);
 }
 void SceneManager::on_input(const ExMessage& msg) {
 	current_scene->on_input(msg);

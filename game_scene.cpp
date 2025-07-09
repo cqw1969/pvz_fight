@@ -5,7 +5,7 @@ void GameScene::on_enter() {
 void GameScene::on_update(int delta) {
 	std::cout << "游戏正在运行..." << std::endl;
 }
-void GameScene::on_draw() {
+void GameScene::on_draw(const Camera& camera) {
 	outtextxy(10, 10, _T("游戏局内绘图内容"));
 }
 void GameScene::on_input(const ExMessage& msg) {

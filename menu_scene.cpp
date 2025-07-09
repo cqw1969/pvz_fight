@@ -1,28 +1,17 @@
 #include "menu_scene.h"
 void MenuScene::on_enter() {
-	animation_peashooter_run_right.set_atlas(&atlas_peashooter_run_right);
-	animation_peashooter_run_right.set_interval(75);
-	animation_peashooter_run_right.set_loop(true);
-	
-	timer.set_wait_time(1000);
-	timer.set_one_shot(false);//非单次触发
-	timer.set_callback([]() {
-		std::cout << "定时器触发" << std::endl;
-		});
+	mciSendString(_T("play bgm_menu repeat from 0"), NULL, 0, NULL);
 }
 void MenuScene::on_update(int delta) {
-	timer.on_update(delta);
-	camera.on_update(delta);
-	animation_peashooter_run_right.on_update(delta);
+	
 }
-void MenuScene::on_draw() {
-	const Vector2& pos_camera = camera.get_position();
-	animation_peashooter_run_right.on_draw((int)100-pos_camera.x, (int)100-pos_camera.y);//世界坐标减去相机坐标
+void MenuScene::on_draw(const Camera& camera) {
+	putimage(0, 0, &img_menu_background);
 }
 void MenuScene::on_input(const ExMessage& msg) {
-	if (msg.message == WM_KEYDOWN) {
-		//scene_manager.switch_to(SceneManager::SceneType::Selector);
-		camera.shake(10,350);
+	if (msg.message == WM_KEYUP) {
+		mciSendString(_T("play ui_confirm from 0"), NULL, 0, NULL);
+		scene_manager.switch_to(SceneManager::SceneType::Selector);
 	}
 }
 void MenuScene::on_exit() {

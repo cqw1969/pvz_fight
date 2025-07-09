@@ -88,6 +88,7 @@ IMAGE img_avatar_sunflower; // 龙日葵头像图片
 Scene* menu_scene = nullptr;
 Scene* game_scene = nullptr;
 Scene* selector_scene = nullptr;
+Camera main_camera;
 SceneManager scene_manager;
 
 void flip_atlas(Atlas& src, Atlas& dst) {
@@ -186,6 +187,10 @@ int main() {
 	const int FPS = 60;
 	load_game_resources();
 	initgraph(1280, 720);
+
+	settextstyle(28, 0, _T("IPix"));
+	setbkmode(TRANSPARENT);
+
 	BeginBatchDraw();
 	menu_scene = new MenuScene();
 	game_scene = new GameScene();
@@ -208,7 +213,7 @@ int main() {
 
 		//绘制画面
 		cleardevice();
-		scene_manager.on_draw();
+		scene_manager.on_draw(main_camera);
 		FlushBatchDraw();
 
 		DWORD frame_end_time = GetTickCount();
