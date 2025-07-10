@@ -1,8 +1,8 @@
 #pragma once
 #pragma comment(lib, "MSIMG32.LIB")
-#include <graphics.h>
 #include "camera.h"
 #include "vector2.h"
+#include <graphics.h>
 namespace Util {
 	inline void flip_image(IMAGE* src, IMAGE* dst) {
 		int w = src->getwidth();
@@ -37,6 +37,11 @@ namespace Util {
 		int h =height>0?height:img->getheight();
 		AlphaBlend(GetImageHDC(GetWorkingImage()), dst_x, dst_y, w, h, GetImageHDC(img), src_x, src_y, w, h,
 			{ AC_SRC_OVER,0,255,AC_SRC_ALPHA });
+	}
+
+	inline void line(const Camera& camera, int x1, int y1, int x2, int y2) {
+		const Vector2& pos_camera = camera.get_position();
+		::line((int)(x1 - pos_camera.x), (int)(y1 - pos_camera.y), (int)(x2 - pos_camera.x), (int)(y2 - pos_camera.y));
 	}
 }
 

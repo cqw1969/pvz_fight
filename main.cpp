@@ -1,12 +1,16 @@
 #include "util.h"
 #include "atlas.h"
 #include "scene.h"
+#include "platform.h"
 #include "menu_scene.h"
 #include "game_scene.h"
 #include "selector_scene.h"
 #include "scene_manager.h"
 #include <graphics.h>
 #pragma comment(lib,"winmm.lib")
+
+bool is_debug = false; // 是否开启调试模式
+
 #pragma region {资源加载代码}
 //所需 图片/图集 变量的定义:
 //1.主菜单背景 图片
@@ -90,6 +94,8 @@ Scene* game_scene = nullptr;
 Scene* selector_scene = nullptr;
 Camera main_camera;
 SceneManager scene_manager;
+
+std::vector<Platform> platform_list;
 
 void flip_atlas(Atlas& src, Atlas& dst) {
 	dst.clear();

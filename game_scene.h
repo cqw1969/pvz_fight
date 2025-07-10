@@ -1,7 +1,17 @@
 #pragma once
+#include "util.h"
 #include "scene.h"
+#include "platform.h"
 #include "scene_manager.h"
-#include <iostream>
+#include <vector>
+
+extern IMAGE img_sky;
+extern IMAGE img_hills;
+extern IMAGE img_platform_large;
+extern IMAGE img_platform_small;
+
+extern Camera main_camera;
+extern std::vector<Platform> platform_list;
 
 extern SceneManager scene_manager;
 
@@ -18,5 +28,7 @@ public:
 	void on_exit() override;
 
 private:
+	POINT pos_img_sky = { 0 };
+	POINT pos_img_hills = { 0 };
 };
 
