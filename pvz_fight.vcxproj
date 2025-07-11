@@ -129,9 +129,12 @@
     <ClCompile Include="game_scene.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu_scene.cpp" />
+    <ClCompile Include="peashooter_player.cpp" />
     <ClCompile Include="platform.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="scene_manager.cpp" />
     <ClCompile Include="selector_scene.cpp" />
+    <ClCompile Include="sunflower_player.cpp" />
     <ClCompile Include="timer.cpp" />
     <ClCompile Include="vector2.cpp" />
   </ItemGroup>
@@ -141,11 +144,15 @@
     <ClInclude Include="camera.h" />
     <ClInclude Include="game_scene.h" />
     <ClInclude Include="menu_scene.h" />
+    <ClInclude Include="peashooter_player.h" />
     <ClInclude Include="platform.h" />
+    <ClInclude Include="player.h" />
+    <ClInclude Include="player_id.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="scene.h" />
     <ClInclude Include="scene_manager.h" />
     <ClInclude Include="selector_scene.h" />
+    <ClInclude Include="sunflower_player.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="util.h" />
     <ClInclude Include="vector2.h" />

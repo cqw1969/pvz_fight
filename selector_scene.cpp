@@ -182,6 +182,24 @@ void SelectorScene::on_input(const ExMessage& msg) {
 	}
 }
 void SelectorScene::on_exit() {
+	switch (player_type_1) {
+		case PlayerType::Peashooter:
+			player_1=new PeashooterPlayer();
+			break;
+		case PlayerType::Sunflower:
+			player_1 = new SunflowerPlayer();
+			break;
+	}
+	player_1->set_id(PlayerID::P1);
+	switch (player_type_2) {
+		case PlayerType::Peashooter:
+			player_2 = new PeashooterPlayer();
+			break;
+		case PlayerType::Sunflower:
+			player_2 = new SunflowerPlayer();
+			break;
+	}
+	player_2->set_id(PlayerID::P2);
 }
 
 void SelectorScene::outtextxy_shaded(int x, int y, LPCTSTR str)

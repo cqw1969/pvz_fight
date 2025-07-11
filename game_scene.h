@@ -1,9 +1,13 @@
 #pragma once
 #include "util.h"
 #include "scene.h"
+#include "player.h"
 #include "platform.h"
 #include "scene_manager.h"
 #include <vector>
+
+extern Player* player_1;
+extern Player* player_2;
 
 extern IMAGE img_sky;
 extern IMAGE img_hills;

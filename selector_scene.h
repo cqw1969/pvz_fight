@@ -2,7 +2,12 @@
 #include "scene.h"
 #include "animation.h"
 #include "scene_manager.h"
+#include "player_id.h"
+#include "peashooter_player.h"
+#include "sunflower_player.h"
 
+extern Player* player_1;
+extern Player* player_2;
 #pragma region {资源加载代码}
 extern IMAGE img_VS; // VS 艺术字图片
 extern IMAGE img_1P; // 1P 文本图片

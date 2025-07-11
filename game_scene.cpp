@@ -1,5 +1,8 @@
 #include "game_scene.h"
 void GameScene::on_enter() {
+	player_1->set_position(200, 50);
+	player_2->set_position(975, 50);
+
 	pos_img_sky.x = (getwidth() - img_sky.getwidth()) / 2;
 	pos_img_sky.y = (getheight() - img_sky.getheight()) / 2;
 	pos_img_hills.x = (getwidth() - img_hills.getwidth()) / 2;
@@ -40,6 +43,8 @@ void GameScene::on_enter() {
 	small_platform_3.shape.y = (float)small_platform_3.render_position.y + img_platform_small.getheight() / 2;
 }
 void GameScene::on_update(int delta) {
+	player_1->on_update(delta);
+	player_2->on_update(delta);
 }
 void GameScene::on_draw(const Camera& camera) {
 	Util::putimage_alpha(camera, pos_img_sky.x, pos_img_sky.y, &img_sky);
@@ -54,8 +59,13 @@ void GameScene::on_draw(const Camera& camera) {
 		outtextxy(15, 15, _T("Debug mode,Press Q"));
 	}
 
+	player_1->on_draw(camera);
+	player_2->on_draw(camera);
 }
 void GameScene::on_input(const ExMessage& msg) {
+	player_1->on_input(msg);
+	player_2->on_input(msg);
+
 	switch (msg.message) {
 	case WM_KEYUP:
 		if (msg.vkcode == 0x51) {//Q
