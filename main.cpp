@@ -7,6 +7,7 @@
 #include "selector_scene.h"
 #include "scene_manager.h"
 #include "player.h"
+#include "bullet.h"
 #include <graphics.h>
 #pragma comment(lib,"winmm.lib")
 
@@ -96,6 +97,7 @@ Scene* selector_scene = nullptr;
 Camera main_camera;
 SceneManager scene_manager;
 
+std::vector<Bullet*> bullet_list;
 std::vector<Platform> platform_list;
 
 Player* player_1 = nullptr;

@@ -1,6 +1,12 @@
 #include "player.h"
 Player::Player(){
 	current_animation = &animation_idle_right;
+
+	timer_attack_cd.set_wait_time(attack_cd);
+	timer_attack_cd.set_one_shot(true);
+	timer_attack_cd.set_callback([&]() {
+		can_attack = true;
+		});
 }
 void Player::on_update(int delta) {
 	int derection = is_right_key_down - is_left_key_down;
@@ -14,6 +20,7 @@ void Player::on_update(int delta) {
 		current_animation = is_facing_right ? &animation_idle_right : &animation_idle_left;
 	}
 	current_animation->on_update(delta);
+	timer_attack_cd.on_update(delta);
 	move_and_collide(delta);
 }
 void Player::on_draw(const Camera& camera) {
@@ -25,15 +32,28 @@ void Player::on_input(const ExMessage& msg) {
 			switch (id) {
 				case PlayerID::P1:
 					switch (msg.vkcode) {
-						case 0x41: // A
-							is_left_key_down=true;
-							break;
-						case 0x44: // D
-							is_right_key_down=true;
-							break;
-						case 0x57:// W
-							on_jump();
-							break;
+					case 0x41: // A
+						is_left_key_down = true;
+						break;
+					case 0x44: // D
+						is_right_key_down = true;
+						break;
+					case 0x57:// W
+						on_jump();
+						break;
+					case 0x46:// F
+						if (can_attack) {
+							on_attack();
+							can_attack = false;
+							timer_attack_cd.restart();
+						}
+						break;
+					case 0x47:// G
+						if (mp >= 100) {
+							on_attack_ex();
+							mp = 0;
+						}
+						break;
 					}
 					break;
 				case PlayerID::P2:
@@ -46,6 +66,19 @@ void Player::on_input(const ExMessage& msg) {
 							break;
 						case VK_UP:
 							on_jump();
+							break;
+						case VK_OEM_PERIOD:// .
+							if (can_attack) {
+								on_attack();
+								can_attack = false;
+								timer_attack_cd.restart();
+							}
+							break;
+						case VK_OEM_2:	// ' / '
+							if (mp >= 100) {
+								on_attack_ex();
+								mp = 0;
+							}
 							break;
 					}
 					break;
@@ -80,11 +113,14 @@ void Player::on_input(const ExMessage& msg) {
 }
 
 void Player::on_run(float distance){
+	if(is_attacking_ex)
+		return;
+
 	position.x += distance;
 }
 
 void Player::on_jump(){
-	if (velocity.y !=0) return;//只有下降速度为0时才可以跳,也即只能在平台上才能跳
+	if (velocity.y !=0|| is_attacking_ex) return;//只有下降速度为0时才可以跳,也即只能在平台上才能跳且不能在超级攻击中跳
 	velocity.y += jump_velocity;
 }
 
@@ -96,6 +132,21 @@ void Player::set_position(float x, float y)
 {
 	position.x = x;
 	position.y = y;
+}
+
+const Vector2& Player::get_position() const {
+	return position;
+}
+const Vector2& Player::get_size() const {
+	return size;
+}
+
+void Player::on_attack()
+{
+}
+
+void Player::on_attack_ex()
+{
 }
 
 void Player::move_and_collide(int delta) {

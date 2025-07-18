@@ -19,6 +19,9 @@
     <Filter Include="player">
       <UniqueIdentifier>{4f638405-58d0-4843-bbc7-d5d44c463ae6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="bullet">
+      <UniqueIdentifier>{c5ffcd9c-ab8d-4d96-a82a-f2ccc1573464}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -62,6 +65,18 @@
     </ClCompile>
     <ClCompile Include="player.cpp">
       <Filter>player</Filter>
+    </ClCompile>
+    <ClCompile Include="bullet.cpp">
+      <Filter>bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="pea_bullet.cpp">
+      <Filter>bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="sun_bullet_ex.cpp">
+      <Filter>bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="sun_bullet.cpp">
+      <Filter>bullet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +130,18 @@
     </ClInclude>
     <ClInclude Include="player_id.h">
       <Filter>player</Filter>
+    </ClInclude>
+    <ClInclude Include="bullet.h">
+      <Filter>bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="pea_bullet.h">
+      <Filter>bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="sun_bullet_ex.h">
+      <Filter>bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="sun_bullet.h">
+      <Filter>bullet</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
