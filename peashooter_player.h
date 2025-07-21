@@ -1,4 +1,6 @@
-#pragma once
+#ifndef _PEASHOOTER_PLAYER_H_
+#define _PEASHOOTER_PLAYER_H_
+
 #include "player.h"
 #include "pea_bullet.h"
 extern Atlas atlas_peashooter_idle_left;
@@ -7,11 +9,13 @@ extern Atlas atlas_peashooter_run_left;
 extern Atlas atlas_peashooter_run_right;
 extern Atlas atlas_peashooter_attack_ex_left;
 extern Atlas atlas_peashooter_attack_ex_right;
+extern Atlas atlas_peashooter_die_left;
+extern Atlas atlas_peashooter_die_right;
 
 class PeashooterPlayer:public Player
 {
 public:
-	PeashooterPlayer();
+	PeashooterPlayer(bool facing_right);
 	~PeashooterPlayer()=default;
 
 	void on_update(int delta) override;
@@ -29,3 +33,5 @@ private:
 	Timer timer_spawn_pea_ex;//豌豆子弹发射定时器(持续时间内的攻击间隔)
 };
 
+
+#endif // !_PEASHOOTER_PLAYER_H_

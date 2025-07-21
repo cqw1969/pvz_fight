@@ -1,5 +1,5 @@
 #include "pea_bullet.h"
-
+//#include <iostream>
 PeaBullet::PeaBullet()
 {
 	size.x = 64, size.y = 64;
@@ -46,4 +46,6 @@ void PeaBullet::on_draw(const Camera& camera) const
 		Util::putimage_alpha(camera, (int)position.x, (int)position.y, &img_pea);
 	else
 		animation_break.on_draw(camera, (int)position.x, (int)position.y);
+
+	Bullet::on_draw(camera);
 }

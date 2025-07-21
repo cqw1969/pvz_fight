@@ -34,7 +34,7 @@ void SunBullet::on_collide()
 void SunBullet::on_update(int delta)
 {
 	if (valid) {
-		position.y += gravity * delta;
+		velocity.y += gravity * delta;
 		position += velocity * (float)delta;
 	}
 
@@ -53,4 +53,6 @@ void SunBullet::on_draw(const Camera& camera) const
 		animation_idle.on_draw(camera, (int)position.x, (int)position.y);
 	else 
 		animation_explode.on_draw(camera, (int)(position.x + explode_render_offset.x), (int)(position.y + explode_render_offset.y));
+
+	Bullet::on_draw(camera);
 }

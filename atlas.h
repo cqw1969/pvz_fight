@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __ATLAS_H__
+#define __ATLAS_H__
+
 #include <vector>
 #include <graphics.h>
 class Atlas//¹ÜÀíÍ¼Æ¬µÄ
@@ -17,3 +19,5 @@ private:
 	std::vector<IMAGE> img_list;
 };
 
+
+#endif // !__ATLAS_H__

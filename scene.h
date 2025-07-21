@@ -1,4 +1,6 @@
-#pragma once
+#ifndef _SCENE_H_
+#define _SCENE_H_
+
 #include "camera.h"
 #include <graphics.h>
 class Scene
@@ -15,3 +17,5 @@ class Scene
 	private:
 };
 
+
+#endif // !_SCENE_H_

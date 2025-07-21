@@ -78,6 +78,12 @@
     <ClCompile Include="sun_bullet.cpp">
       <Filter>bullet</Filter>
     </ClCompile>
+    <ClCompile Include="status_bar.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="particle.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="atlas.h">
@@ -142,6 +148,12 @@
     </ClInclude>
     <ClInclude Include="sun_bullet.h">
       <Filter>bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="status_bar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="particle.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

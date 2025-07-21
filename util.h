@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __UTIL_H__
+#define __UTIL_H__
+
 #pragma comment(lib, "MSIMG32.LIB")
 #include "camera.h"
 #include "vector2.h"
@@ -43,5 +45,23 @@ namespace Util {
 		const Vector2& pos_camera = camera.get_position();
 		::line((int)(x1 - pos_camera.x), (int)(y1 - pos_camera.y), (int)(x2 - pos_camera.x), (int)(y2 - pos_camera.y));
 	}
+
+	inline void sketch_image(IMAGE* src, IMAGE* dst) {
+		int w = src->getwidth();
+		int h = src->getheight();
+		Resize(dst, w, h);
+		DWORD* src_buffer = GetImageBuffer(src);
+		DWORD* dst_buffer = GetImageBuffer(dst);
+		for (int y = 0; y < h; y++)
+		{
+			for (int x = 0; x < w; x++) {
+				int idx = y * w + x;
+				dst_buffer[idx] = 0x00FFFFFF | (src_buffer[idx] & 0xFF000000);
+				//dst_buffer[idx] = BGR(RGB(255, 255, 255)) | (src_buffer[idx] & 0xFF000000);
+			}
+		}
+	}
 }
 
+
+#endif // !__UTIL_H__

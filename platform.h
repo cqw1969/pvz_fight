@@ -1,4 +1,6 @@
-#pragma once
+#ifndef _PLATFORM_H_
+#define _PLATFORM_H_
+
 #include "util.h"
 #include "camera.h"
 
@@ -21,3 +23,5 @@ public:
 	void on_draw(const Camera& camera) const;
 };
 
+
+#endif // !_PLATFORM_H_

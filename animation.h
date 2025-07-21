@@ -1,4 +1,6 @@
-#pragma once
+#ifndef _ANIMATION_H
+#define _ANIMATION_H
+
 #include "util.h"
 #include "atlas.h"
 #include "camera.h"
@@ -31,3 +33,5 @@ private:
 	std::function<void()> callback;
 };
 
+
+#endif // !_ANIMATION_H

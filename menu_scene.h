@@ -1,11 +1,12 @@
-#pragma once
+#ifndef _MENU_SCENE_H_
+#define _MENU_SCENE_H_
+
 #include "scene.h"
 #include "atlas.h"
 #include "timer.h"
 #include "camera.h"
 #include "animation.h"
 #include "scene_manager.h"
-#include <iostream>
 
 extern IMAGE img_menu_background;
 extern SceneManager scene_manager;
@@ -26,3 +27,5 @@ private:
 	
 };
 
+
+#endif // !_MENU_SCENE_H_

@@ -1,4 +1,6 @@
-#pragma once
+#ifndef _SUN_BULLET_H_
+#define _SUN_BULLET_H_
+
 #include "bullet.h"
 #include "animation.h"
 
@@ -24,3 +26,5 @@ private:
 	Vector2 explode_render_offset;		//±¬Õ¨Ê±µÄäÖÈ¾Æ«ÒÆ
 };
 
+
+#endif // !_SUN_BULLET_H_

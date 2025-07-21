@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __SUNFLOWER_PLAYER_H__
+#define __SUNFLOWER_PLAYER_H__
+
 #include "player.h"
 #include "sun_bullet.h"
 #include "sun_bullet_ex.h"
@@ -10,6 +12,8 @@ extern Atlas atlas_sunflower_run_right;
 extern Atlas atlas_sunflower_attack_ex_left;
 extern Atlas atlas_sunflower_attack_ex_right;
 extern Atlas atlas_sun_text;
+extern Atlas atlas_sunflower_die_left;
+extern Atlas atlas_sunflower_die_right;
 
 extern Player* player_1;
 extern Player* player_2;
@@ -17,7 +21,7 @@ extern Player* player_2;
 class SunflowerPlayer : public Player
 {
 public:
-	SunflowerPlayer();
+	SunflowerPlayer(bool facing_right);
 	~SunflowerPlayer()=default;
 	void on_update(int delta) override;
 	void on_draw(const Camera& camera) override;
@@ -33,3 +37,5 @@ private:
 	bool is_sun_text_visible = false;
 };
 
+
+#endif // !__SUNFLOWER_PLAYER_H__

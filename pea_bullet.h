@@ -1,4 +1,6 @@
-#pragma once
+#ifndef _PEA_BULLET_H_
+#define _PEA_BULLET_H_
+
 #include "bullet.h"
 #include "animation.h"
 
@@ -19,3 +21,5 @@ private:
 	Animation animation_break; //Íã¶¹×Óµ¯ÆÆËé¶¯»­
 };
 
+
+#endif // !_PEA_BULLET_H_

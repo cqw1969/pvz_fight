@@ -1,4 +1,6 @@
-#pragma once
+#ifndef _SCENE_MANAGER_H_
+#define _SCENE_MANAGER_H_
+
 #include "scene.h"
 
 extern Scene* menu_scene;
@@ -26,3 +28,5 @@ public:
 		Scene* current_scene = nullptr;
 };
 
+
+#endif // !_SCENE_MANAGER_H_

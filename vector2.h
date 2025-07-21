@@ -1,4 +1,6 @@
-#pragma once
+#ifndef _VECTOR2_H_
+#define _VECTOR2_H_
+
 #include <cmath>
 class Vector2
 {
@@ -21,3 +23,5 @@ public:
 	Vector2 normalize();
 };
 
+
+#endif // !_VECTOR2_H_

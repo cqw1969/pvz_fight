@@ -1,9 +1,14 @@
-#pragma once
+#ifndef _BULLET_H_
+#define _BULLET_H_
+
 #include "vector2.h"
 #include "player_id.h"
 #include "camera.h"
 #include <functional>
 #include <graphics.h>
+
+extern bool is_debug;
+
 class Bullet
 {
 public:
@@ -43,3 +48,4 @@ protected://确保子类可以访问基类的成员
 	PlayerID target_id=PlayerID::P1;	//子弹的目标玩家
 };
 
+#endif // !_BULLET_H_

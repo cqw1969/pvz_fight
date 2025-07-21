@@ -1,4 +1,6 @@
-#pragma once
+#ifndef _SELECTOR_SCENE_H_
+#define _SELECTOR_SCENE_H_
+
 #include "scene.h"
 #include "animation.h"
 #include "scene_manager.h"
@@ -8,6 +10,10 @@
 
 extern Player* player_1;
 extern Player* player_2;
+
+extern IMAGE* img_player_1_avatar;
+extern IMAGE* img_player_2_avatar;
+
 #pragma region {资源加载代码}
 extern IMAGE img_VS; // VS 艺术字图片
 extern IMAGE img_1P; // 1P 文本图片
@@ -91,3 +97,5 @@ private:
 	void outtextxy_shaded(int x, int y, LPCTSTR str);			// 绘制带有阴影的文本
 };
 
+
+#endif // !_SELECTOR_SCENE_H_

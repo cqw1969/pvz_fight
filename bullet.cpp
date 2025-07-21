@@ -1,4 +1,5 @@
 #include "bullet.h"
+#include "Particle.h"
 void Bullet::set_damage(int val) {
 	damage = val;
 }
@@ -77,7 +78,14 @@ bool Bullet::check_collision(const Vector2& pos, const Vector2& size)
 }
 
 void Bullet::on_update(int delta){}
-void Bullet::on_draw(const Camera& camera) const{}
+void Bullet::on_draw(const Camera& camera) const{
+	if (is_debug) {
+		setfillcolor(RGB(255, 255, 255));
+		setlinecolor(RGB(255, 255, 255));
+		rectangle((int)position.x, (int)position.y, (int)(position.x + size.x), (int)(position.y + size.y));
+		solidcircle((int)(position.x + size.x / 2), (int)(position.y + size.y / 2), 5);
+	}
+}
 
 bool Bullet::check_if_exceeds_screen()
 {

@@ -1,4 +1,6 @@
-#pragma once
+#ifndef _TIMER_H_
+#define _TIMER_H_
+
 #include <functional>
 class Timer
 {
@@ -23,3 +25,5 @@ private:
 	std::function<void()> callback;	//»Øµ÷º¯Êý
 };
 
+
+#endif // !_TIMER_H_

@@ -103,6 +103,9 @@ std::vector<Platform> platform_list;
 Player* player_1 = nullptr;
 Player* player_2 = nullptr;
 
+IMAGE* img_player_1_avatar=nullptr;
+IMAGE* img_player_2_avatar=nullptr;
+
 void flip_atlas(Atlas& src, Atlas& dst) {
 	dst.clear();
 	for (int i = 0; i < src.get_size(); i++) {
@@ -161,7 +164,7 @@ void load_game_resources() {
 	flip_atlas(atlas_sunflower_die_right, atlas_sunflower_die_left);
 
 	loadimage(&img_pea, _T("resources/pea.png"));
-	atlas_pea_break.load_from_file(_T("resources/pea_break_%d. png"), 3);
+	atlas_pea_break.load_from_file(_T("resources/pea_break_%d.png"), 3);
 	atlas_sun.load_from_file(_T("resources/sun_%d.png"), 5);
 	atlas_sun_explode.load_from_file(_T("resources/sun_explode_%d.png"), 5);
 	atlas_sun_ex.load_from_file(_T("resources/sun_ex_%d.png"), 5);

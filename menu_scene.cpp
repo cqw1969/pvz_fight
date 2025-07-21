@@ -15,6 +15,5 @@ void MenuScene::on_input(const ExMessage& msg) {
 	}
 }
 void MenuScene::on_exit() {
-	std::cout << "Ö÷²Ëµ¥ÍË³ö" << std::endl;
 }
 
