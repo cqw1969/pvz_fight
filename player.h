@@ -47,19 +47,19 @@ public:
 	virtual void on_attack();
 	virtual void on_attack_ex();
 
-protected://·ÀÖ¹ÎŞ·¨·ÃÎÊÒÔÏÂµÄanimation±äÁ¿
+protected://é˜²æ­¢æ— æ³•è®¿é—®ä»¥ä¸‹çš„animationå˜é‡
 	void move_and_collide(int delta);
 
-	const float gravity = 1.6e-3f;//ÖØÁ¦¼ÓËÙ¶È(1.6*(e-3))
-	const float run_velocity = 0.55f;//±¼ÅÜËÙ¶È
-	const float jump_velocity = -0.85f;//ÌøÔ¾ËÙ¶È
+	const float gravity = 1.6e-3f;//é‡åŠ›åŠ é€Ÿåº¦(1.6*(e-3))
+	const float run_velocity = 0.55f;//å¥”è·‘é€Ÿåº¦
+	const float jump_velocity = -0.85f;//è·³è·ƒé€Ÿåº¦
 
-	int mp = 0;//Íæ¼ÒµÄÄÜÁ¿Öµ
-	int hp = 100;//Íæ¼ÒµÄÉúÃüÖµ
+	int mp = 0;//ç©å®¶çš„èƒ½é‡å€¼
+	int hp = 100;//ç©å®¶çš„ç”Ÿå‘½å€¼
 
-	Vector2 size;//Íæ¼Ò´óĞ¡(ÓÃÀ´¼ÆËãÅö×²µÄ)
+	Vector2 size;//ç©å®¶å¤§å°(ç”¨æ¥è®¡ç®—ç¢°æ’çš„)
 	Vector2 position;
-	Vector2 velocity;//×ÜÌåËÙ¶È
+	Vector2 velocity;//æ€»ä½“é€Ÿåº¦
 
 	Animation animation_idle_left;
 	Animation animation_idle_right;
@@ -67,18 +67,18 @@ protected://·ÀÖ¹ÎŞ·¨·ÃÎÊÒÔÏÂµÄanimation±äÁ¿
 	Animation animation_run_right;
 	Animation animation_attack_ex_left;
 	Animation animation_attack_ex_right;
-	Animation animation_jump_effect;//ÌøÔ¾ÌØĞ§
-	Animation animation_land_effect;//×ÅÂ½ÌØĞ§
+	Animation animation_jump_effect;//è·³è·ƒç‰¹æ•ˆ
+	Animation animation_land_effect;//ç€é™†ç‰¹æ•ˆ
 	Animation animation_die_left;
 	Animation animation_die_right;
 
-	bool is_jump_effect_visible = false;//ÌøÔ¾ÌØĞ§ÊÇ·ñ¿É¼û
-	bool is_land_effect_visible = false;//×ÅÂ½ÌØĞ§ÊÇ·ñ¿É¼û
+	bool is_jump_effect_visible = false;//è·³è·ƒç‰¹æ•ˆæ˜¯å¦å¯è§
+	bool is_land_effect_visible = false;//ç€é™†ç‰¹æ•ˆæ˜¯å¦å¯è§
 
-	Vector2 position_jump_effect;//ÌøÔ¾ÌØĞ§Î»ÖÃ
-	Vector2 position_land_effect;//×ÅÂ½ÌØĞ§Î»ÖÃ
+	Vector2 position_jump_effect;//è·³è·ƒç‰¹æ•ˆä½ç½®
+	Vector2 position_land_effect;//ç€é™†ç‰¹æ•ˆä½ç½®
 
-	Animation* current_animation = nullptr;//µ±Ç°²¥·ÅµÄ¶¯»­
+	Animation* current_animation = nullptr;//å½“å‰æ’­æ”¾çš„åŠ¨ç”»
 
 	PlayerID id=PlayerID::P1;
 
@@ -91,23 +91,23 @@ protected://·ÀÖ¹ÎŞ·¨·ÃÎÊÒÔÏÂµÄanimation±äÁ¿
 	bool can_attack = true;
 	Timer timer_attack_cd;
 
-	bool is_attacking_ex=false;//ÊÇ·ñ´¦ÓÚ³¬¼¶¹¥»÷×´Ì¬
+	bool is_attacking_ex=false;//æ˜¯å¦å¤„äºè¶…çº§æ”»å‡»çŠ¶æ€
 
-	IMAGE img_sketch;//¼ôÓ°Ö¡Í¼Æ¬
-	bool is_invulnerable = false;//ÊÇ·ñÎŞµĞ
-	bool is_show_sketch_frame = false;//ÊÇ·ñÏÔÊ¾¼ôÓ°Ö¡
-	Timer timer_invulnerable;//ÎŞµĞ¼ÆÊ±Æ÷
-	Timer timer_invulnerable_blink;//¼ôÓ°Ö¡¼ÆÊ±Æ÷
+	IMAGE img_sketch;//å‰ªå½±å¸§å›¾ç‰‡
+	bool is_invulnerable = false;//æ˜¯å¦æ— æ•Œ
+	bool is_show_sketch_frame = false;//æ˜¯å¦æ˜¾ç¤ºå‰ªå½±å¸§
+	Timer timer_invulnerable;//æ— æ•Œè®¡æ—¶å™¨
+	Timer timer_invulnerable_blink;//å‰ªå½±å¸§è®¡æ—¶å™¨
 
-	std::vector<Particle> particle_list;//ÌØĞ§Á£×ÓÁĞ±í
+	std::vector<Particle> particle_list;//ç‰¹æ•ˆç²’å­åˆ—è¡¨
 
-	Timer timer_run_effect_generation;//±¼ÅÜÌØĞ§Á£×Ó·¢Éä¶¨Ê±Æ÷
-	Timer timer_die_effect_generation;//ËÀÍöÌØĞ§Á£×Ó·¢Éä¶¨Ê±Æ÷
+	Timer timer_run_effect_generation;//å¥”è·‘ç‰¹æ•ˆç²’å­å‘å°„å®šæ—¶å™¨
+	Timer timer_die_effect_generation;//æ­»äº¡ç‰¹æ•ˆç²’å­å‘å°„å®šæ—¶å™¨
 
-	bool is_cursor_visible = true;//ÊÇ·ñÏÔÊ¾¹â±ê
-	Timer timer_cursor_visibility;//¹â±êÏÔÊ¾¼ÆÊ±Æ÷
+	bool is_cursor_visible = true;//æ˜¯å¦æ˜¾ç¤ºå…‰æ ‡
+	Timer timer_cursor_visibility;//å…‰æ ‡æ˜¾ç¤ºè®¡æ—¶å™¨
 
-	Vector2 last_hunt_direction;//×îºóÒ»´ÎÊÜ»÷·½Ïò
+	Vector2 last_hunt_direction;//æœ€åä¸€æ¬¡å—å‡»æ–¹å‘
 };
 
 

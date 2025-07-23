@@ -20,9 +20,9 @@ public:
 	bool check_collision(const Vector2& pos, const Vector2& size) override;
 
 private:
-	Animation animation_idle;				//巨大日光炸弹默认动画
-	Animation animation_explode;		//巨大日光炸弹爆炸动画
-	Vector2 explode_render_offset;		//爆炸时的渲染偏移
+	Animation animation_idle;				//宸ㄥぇ鏃ュ厜鐐稿脊榛樿鍔ㄧ敾
+	Animation animation_explode;		//宸ㄥぇ鏃ュ厜鐐稿脊鐖嗙偢鍔ㄧ敾
+	Vector2 explode_render_offset;		//鐖嗙偢鏃剁殑娓叉煋鍋忕Щ
 };
 
 

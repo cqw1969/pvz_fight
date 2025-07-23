@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <graphics.h>
-class Atlas//¹ÜÀíÍ¼Æ¬µÄ
+class Atlas//ç®¡ç†å›¾ç‰‡çš„
 {
 public:
 	Atlas()=default;

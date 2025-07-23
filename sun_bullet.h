@@ -21,9 +21,9 @@ public:
 private:
 	const float gravity = 1e-3f;
 
-	Animation animation_idle;				//日光炸弹默认动画
-	Animation animation_explode;		//日光炸弹爆炸动画
-	Vector2 explode_render_offset;		//爆炸时的渲染偏移
+	Animation animation_idle;				//鏃ュ厜鐐稿脊榛樿鍔ㄧ敾
+	Animation animation_explode;		//鏃ュ厜鐐稿脊鐖嗙偢鍔ㄧ敾
+	Vector2 explode_render_offset;		//鐖嗙偢鏃剁殑娓叉煋鍋忕Щ
 };
 
 

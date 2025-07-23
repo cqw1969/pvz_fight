@@ -18,12 +18,12 @@ public:
 	void on_draw(const Camera& camera) const;
 
 private:
-	int timer = 0;//Á£×Ó¶¯»­²¥·Å¶¨Ê±Æ÷
-	int lifespan = 0;//µç»°³ÖĞøÊ±³¤
-	int idx_frame = 0;//µ±Ç°²¥·ÅµÄÖ¡
-	Vector2 position;//Á£×ÓÊÀ½ç×ø±êÎ»ÖÃ
-	bool valid = true;//Á£×Ó¶ÔÏóÊÇ·ñÓĞĞ§
-	Atlas* atlas = nullptr;//Á£×Ó¶¯»­Ê¹ÓÃµÄÍ¼¼¯
+	int timer = 0;//ç²’å­åŠ¨ç”»æ’­æ”¾å®šæ—¶å™¨
+	int lifespan = 0;//ç”µè¯æŒç»­æ—¶é•¿
+	int idx_frame = 0;//å½“å‰æ’­æ”¾çš„å¸§
+	Vector2 position;//ç²’å­ä¸–ç•Œåæ ‡ä½ç½®
+	bool valid = true;//ç²’å­å¯¹è±¡æ˜¯å¦æœ‰æ•ˆ
+	Atlas* atlas = nullptr;//ç²’å­åŠ¨ç”»ä½¿ç”¨çš„å›¾é›†
 };
 
 

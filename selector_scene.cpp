@@ -75,15 +75,15 @@ void SelectorScene::on_draw(const Camera& camera) {
 	
 
 	putimage(0, 0, &img_selector_background); 
-	//×ó±ßµÄ×ó±ß ÍÏÎ²
+	//å·¦è¾¹çš„å·¦è¾¹ æ‹–å°¾
 	Util::putimage_alpha(selector_background_scorll_offset_x-img_p1_selector_background->getwidth(), 0, img_p1_selector_background);
-	//×ó±ßµÄÓÒ±ß ¿É¼û
+	//å·¦è¾¹çš„å³è¾¹ å¯è§
 	Util::putimage_alpha(selector_background_scorll_offset_x, 0, 
 		img_p1_selector_background->getwidth() - selector_background_scorll_offset_x, 0, img_p1_selector_background, 0, 0);
-	//ÓÒ±ßµÄ×ó±ß ¿É¼û
+	//å³è¾¹çš„å·¦è¾¹ å¯è§
 	Util::putimage_alpha(getwidth() - img_p2_selector_background->getwidth(), 0, img_p2_selector_background->getwidth() -
 		selector_background_scorll_offset_x, 0, img_p2_selector_background, selector_background_scorll_offset_x, 0);
-	//ÓÒ±ßµÄÓÒ±ß ÍÏÎ²
+	//å³è¾¹çš„å³è¾¹ æ‹–å°¾
 	Util::putimage_alpha(getwidth() - selector_background_scorll_offset_x, 0, img_p2_selector_background);
 
 	Util::putimage_alpha(pos_img_VS.x, pos_img_VS.y, &img_VS); 
@@ -141,10 +141,10 @@ void SelectorScene::on_input(const ExMessage& msg) {
 				case 0x44: // D
 					is_btn_1P_right_down = true;
 					break;
-				case VK_LEFT://¡û
+				case VK_LEFT://â†
 					is_btn_2P_left_down = true;
 					break;
-				case VK_RIGHT://¡ú
+				case VK_RIGHT://â†’
 					is_btn_2P_right_down = true;
 					break;
 			}
@@ -152,7 +152,7 @@ void SelectorScene::on_input(const ExMessage& msg) {
 		case WM_KEYUP:
 			switch (msg.vkcode) {
 			case 0x41: // A
-				is_btn_1P_left_down = false;					//¡ı¡ı¡ı´Ë´¦ÊÇÎªÁË±ÜÃâ<0µÄÇé¿ö,ÇÒ´Ë´¦ÓÀ²»Îª0,ÒòÎª×îĞ¡-1+InvalidÒ²Ö»ÄÜÎª1,ÒòÎªÈ¡Ä£,ËùÒÔÒ²ÓÀ²»´ïµ½Invalid
+				is_btn_1P_left_down = false;					//â†“â†“â†“æ­¤å¤„æ˜¯ä¸ºäº†é¿å…<0çš„æƒ…å†µ,ä¸”æ­¤å¤„æ°¸ä¸ä¸º0,å› ä¸ºæœ€å°-1+Invalidä¹Ÿåªèƒ½ä¸º1,å› ä¸ºå–æ¨¡,æ‰€ä»¥ä¹Ÿæ°¸ä¸è¾¾åˆ°Invalid
 				player_type_1 = (PlayerType)(((int)PlayerType::Invalid+ (int)player_type_1 - 1) % (int)PlayerType::Invalid);
 				mciSendString(_T("play ui_switch from 0"), NULL, 0, NULL);
 				break;
@@ -161,12 +161,12 @@ void SelectorScene::on_input(const ExMessage& msg) {
 				player_type_1 = (PlayerType)(((int)PlayerType::Invalid + (int)player_type_1 + 1) % (int)PlayerType::Invalid);
 				mciSendString(_T("play ui_switch from 0"), NULL, 0, NULL);
 				break;
-			case VK_LEFT://¡û
+			case VK_LEFT://â†
 				is_btn_2P_left_down = false;
 				player_type_2 = (PlayerType)(((int)PlayerType::Invalid + (int)player_type_2 - 1) % (int)PlayerType::Invalid);
 				mciSendString(_T("play ui_switch from 0"), NULL, 0, NULL);
 				break;
-			case VK_RIGHT://¡ú
+			case VK_RIGHT://â†’
 				is_btn_2P_right_down = false;
 				player_type_2 = (PlayerType)(((int)PlayerType::Invalid + (int)player_type_2 + 1) % (int)PlayerType::Invalid);
 				mciSendString(_T("play ui_switch from 0"), NULL, 0, NULL);

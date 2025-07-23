@@ -13,16 +13,16 @@ public:
 	void set_one_shot(bool flag);
 	void set_callback(std::function<void()> callback);
 	void pause();
-	void resume();	//继续
+	void resume();	//缁х画
 	void on_update(int delta);
 
 private:
-	int pass_time = 0;						//已过时间
-	int wait_time = 0;							//等待时间
-	bool paused = false;					//是否暂停
-	bool shotted = false;					//是否触发 (触发了没)
-	bool one_shot = false;					//是否单次触发
-	std::function<void()> callback;	//回调函数
+	int pass_time = 0;						//宸茶繃鏃堕棿
+	int wait_time = 0;							//绛夊緟鏃堕棿
+	bool paused = false;					//鏄惁鏆傚仠
+	bool shotted = false;					//鏄惁瑙﹀彂 (瑙﹀彂浜嗘病)
+	bool one_shot = false;					//鏄惁鍗曟瑙﹀彂
+	std::function<void()> callback;	//鍥炶皟鍑芥暟
 };
 
 

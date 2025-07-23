@@ -32,7 +32,7 @@ void PeaBullet::on_collide()
 
 void PeaBullet::on_update(int delta)
 {
-	position+=velocity*(float)delta;//会一直飞,配合破碎效果达成飞溅效果
+	position+=velocity*(float)delta;//浼氫竴鐩撮,閰嶅悎鐮寸鏁堟灉杈炬垚椋炴簠鏁堟灉
 	if (!valid) 
 		animation_break.on_update(delta);
 

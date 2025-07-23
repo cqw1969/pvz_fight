@@ -12,14 +12,14 @@ void GameScene::on_enter() {
 	pos_x_img_winner_text_dst = (getwidth() - img_1P_winner.getwidth()) / 2;
 
 	timer_winner_slide_in.restart();
-	timer_winner_slide_in.set_wait_time(2500);//µÈ´ı2.5Ãëºó¿ªÊ¼»¬Èë
+	timer_winner_slide_in.set_wait_time(2500);//ç­‰å¾…2.5ç§’åå¼€å§‹æ»‘å…¥
 	timer_winner_slide_in.set_one_shot(true);
 	timer_winner_slide_in.set_callback([&](){
 		is_slide_out_started = true;
 		});
 
 	timer_winner_slide_out.restart();
-	timer_winner_slide_out.set_wait_time(1000);//µÈ´ı1Ãëºó¿ªÊ¼»¬³ö
+	timer_winner_slide_out.set_wait_time(1000);//ç­‰å¾…1ç§’åå¼€å§‹æ»‘å‡º
 	timer_winner_slide_out.set_one_shot(true);
 	timer_winner_slide_out.set_callback([&]() {
 		scene_manager.switch_to(SceneManager::SceneType::Menu);
@@ -118,7 +118,7 @@ void GameScene::on_update(int delta) {
 		pos_img_winner_bar.x += (int)(speed_winner_bar * delta);
 		pos_img_winner_text.x += (int)(speed_winner_text * delta);
 
-		if (!is_slide_out_started) {//ÔÚÓÎÏ·½áÊøºó »¬Èë¶¯»­½øĞĞÊ± »¹²»ÄÜ¿ªÊ¼»¬³öµÄÊ±ºò
+		if (!is_slide_out_started) {//åœ¨æ¸¸æˆç»“æŸå æ»‘å…¥åŠ¨ç”»è¿›è¡Œæ—¶ è¿˜ä¸èƒ½å¼€å§‹æ»‘å‡ºçš„æ—¶å€™
 			timer_winner_slide_in.on_update(delta);
 			if (pos_img_winner_bar.x > pos_x_img_winner_bar_dst)
 				pos_img_winner_bar.x = pos_x_img_winner_bar_dst;

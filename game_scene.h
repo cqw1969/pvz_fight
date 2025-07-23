@@ -42,8 +42,8 @@ public:
 	void on_exit() override;
 
 private:
-	const float speed_winner_bar = 3.0f;	//½áËã¶¯Ğ§±³¾°ºÍÎÄ×ÖµÄ»¬¶¯ËÙ¶È
-	const float speed_winner_text = 1.5f;	//½áËã¶¯Ğ§ÎÄ×ÖµÄ»¬¶¯ËÙ¶È
+	const float speed_winner_bar = 3.0f;	//ç»“ç®—åŠ¨æ•ˆèƒŒæ™¯å’Œæ–‡å­—çš„æ»‘åŠ¨é€Ÿåº¦
+	const float speed_winner_text = 1.5f;	//ç»“ç®—åŠ¨æ•ˆæ–‡å­—çš„æ»‘åŠ¨é€Ÿåº¦
 
 	POINT pos_img_sky = { 0 };
 	POINT pos_img_hills = { 0 };
@@ -53,13 +53,13 @@ private:
 
 	bool is_game_over = false;
 
-	POINT pos_img_winner_bar = { 0 };	//½áËã¶¯Ğ§±³¾°Î»ÖÃ
-	POINT pos_img_winner_text = { 0 };	//½áËã¶¯Ğ§ÎÄ×ÖÎ»ÖÃ
-	int pos_x_img_winner_bar_dst = 0;	//½áËã¶¯Ğ§±³¾°ÒÆ¶¯µÄÄ¿±êÎ»ÖÃ
-	int pos_x_img_winner_text_dst = 0;	//½áËã¶¯Ğ§ÎÄ×ÖÒÆ¶¯µÄÄ¿±êÎ»ÖÃ
-	Timer timer_winner_slide_in;		//½áËã¶¯Ğ§±³¾°ºÍÎÄ×ÖµÄ»¬Èë¶¯»­(¶¨Ê±Æ÷)
-	Timer timer_winner_slide_out;		//½áËã¶¯Ğ§±³¾°ºÍÎÄ×ÖµÄ»¬³ö¶¯»­(¶¨Ê±Æ÷)
-	bool is_slide_out_started = false;	//½áËã¶¯Ğ§ÊÇ·ñ¿ªÊ¼»¬³ö
+	POINT pos_img_winner_bar = { 0 };	//ç»“ç®—åŠ¨æ•ˆèƒŒæ™¯ä½ç½®
+	POINT pos_img_winner_text = { 0 };	//ç»“ç®—åŠ¨æ•ˆæ–‡å­—ä½ç½®
+	int pos_x_img_winner_bar_dst = 0;	//ç»“ç®—åŠ¨æ•ˆèƒŒæ™¯ç§»åŠ¨çš„ç›®æ ‡ä½ç½®
+	int pos_x_img_winner_text_dst = 0;	//ç»“ç®—åŠ¨æ•ˆæ–‡å­—ç§»åŠ¨çš„ç›®æ ‡ä½ç½®
+	Timer timer_winner_slide_in;		//ç»“ç®—åŠ¨æ•ˆèƒŒæ™¯å’Œæ–‡å­—çš„æ»‘å…¥åŠ¨ç”»(å®šæ—¶å™¨)
+	Timer timer_winner_slide_out;		//ç»“ç®—åŠ¨æ•ˆèƒŒæ™¯å’Œæ–‡å­—çš„æ»‘å‡ºåŠ¨ç”»(å®šæ—¶å™¨)
+	bool is_slide_out_started = false;	//ç»“ç®—åŠ¨æ•ˆæ˜¯å¦å¼€å§‹æ»‘å‡º
 };
 
 

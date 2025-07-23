@@ -25,10 +25,10 @@ public:
 	void on_draw(const Camera& camera, int x, int y) const;
 	void set_callback(std::function<void()> callback);
 private:
-	int timer=0;					//¼ÆÊ±Æ÷
-	int interval=0;				//Ö¡¼ä¸ô
-	int idx_frame=0;			//Ö¡Ë÷Òı
-	bool is_loop=true;		//ÊÇ·ñÑ­»·²¥·Å
+	int timer=0;					//è®¡æ—¶å™¨
+	int interval=0;				//å¸§é—´éš”
+	int idx_frame=0;			//å¸§ç´¢å¼•
+	bool is_loop=true;		//æ˜¯å¦å¾ªç¯æ’­æ”¾
 	Atlas* atlas=nullptr;
 	std::function<void()> callback;
 };

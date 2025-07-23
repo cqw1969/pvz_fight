@@ -59,14 +59,14 @@ Player::Player(bool facing_right= true):is_facing_right (facing_right){
 
 void Player::on_update(int delta) {
 	int derection = is_right_key_down - is_left_key_down;
-	if (derection != 0) {//¼ÙÈç°´ÁË×óÓÒ¼ü
+	if (derection != 0) {//å‡å¦‚æŒ‰äº†å·¦å³é”®
 		if(!is_attacking_ex)
 			is_facing_right=derection>0;
 			current_animation=is_facing_right?&animation_run_right :&animation_run_left;
 		float distance = derection * delta * run_velocity;
 		on_run(distance);
 	}
-	else {//¼ÙÈçÃ»°´×óÓÒ¼ü,»òÕß°´ÁË×óÓÒ¼üµ«ÊÇÃ»ÓĞÒÆ¶¯
+	else {//å‡å¦‚æ²¡æŒ‰å·¦å³é”®,æˆ–è€…æŒ‰äº†å·¦å³é”®ä½†æ˜¯æ²¡æœ‰ç§»åŠ¨
 			current_animation = is_facing_right ? &animation_idle_right : &animation_idle_left;
 			timer_run_effect_generation.pause();
 	}
@@ -110,7 +110,7 @@ void Player::on_draw(const Camera& camera) {
 	if(is_land_effect_visible)
 		animation_land_effect.on_draw(camera, (int)position_land_effect.x, (int)position_land_effect.y);
 
-	for (Particle& particle : particle_list) //ÎªÁËÈÃÁ£×Ó²»ÕÚµ²Íæ¼Ò
+	for (Particle& particle : particle_list) //ä¸ºäº†è®©ç²’å­ä¸é®æŒ¡ç©å®¶
 		particle.on_draw(camera);
 
 	if (hp > 0 && is_invulnerable && is_show_sketch_frame)
@@ -231,7 +231,7 @@ void Player::on_run(float distance){
 }
 
 void Player::on_jump(){
-	if (velocity.y !=0|| is_attacking_ex) return;//Ö»ÓĞÏÂ½µËÙ¶ÈÎª0Ê±²Å¿ÉÒÔÌø,Ò²¼´Ö»ÄÜÔÚÆ½Ì¨ÉÏ²ÅÄÜÌøÇÒ²»ÄÜÔÚ³¬¼¶¹¥»÷ÖĞÌø
+	if (velocity.y !=0|| is_attacking_ex) return;//åªæœ‰ä¸‹é™é€Ÿåº¦ä¸º0æ—¶æ‰å¯ä»¥è·³,ä¹Ÿå³åªèƒ½åœ¨å¹³å°ä¸Šæ‰èƒ½è·³ä¸”ä¸èƒ½åœ¨è¶…çº§æ”»å‡»ä¸­è·³
 	velocity.y += jump_velocity;
 
 	is_jump_effect_visible = true;
@@ -304,23 +304,23 @@ void Player::move_and_collide(int delta) {
 	velocity.y += gravity * delta;
 	position += velocity * (float)delta;
 
-	if (hp <= 0) return;//¼ÙÈçËÀÁË¾Í²»ÔÙ½øĞĞÅö×²¼ì²â
+	if (hp <= 0) return;//å‡å¦‚æ­»äº†å°±ä¸å†è¿›è¡Œç¢°æ’æ£€æµ‹
 
-	if (velocity.y > 0) {//¼ÙÈçÏÂÂä
+	if (velocity.y > 0) {//å‡å¦‚ä¸‹è½
 		for (const Platform& platfrom : platform_list) {
 			const Platform::CollisionShape& shape = platfrom.shape;
 			bool is_collide_x = (max(position.x + size.x, shape.right) - min(position.x, shape.left))
-				<= size.x + (shape.right - shape.left);//Xmax-Xmin<=¾ØĞÎ¿í¶È(Íæ¼ÒÅö×²Ïä)+Ïß¶Î³¤¶È(Æ½Ì¨ÅĞ¶ÏÏß)  ÅĞ¶ÏË®Æ½·½ÏòÉÏÊÇ·ñÖØºÏ  
-			//µ±Î»ÖÃÔÚÆ½Ì¨ÉÏÃæÇÒÅö×²Ïä(position.y + size.y)´©¹ıÆ½Ì¨Ê± Æ½Ì¨ÏßµÄY×ø±êÎ»ÓÚÍæ¼Ò¾ØĞÎÄÚ²¿£¨Íæ¼Òµ±Ç°Ö¡µÄYÇø¼äÄÚ£©
+				<= size.x + (shape.right - shape.left);//Xmax-Xmin<=çŸ©å½¢å®½åº¦(ç©å®¶ç¢°æ’ç®±)+çº¿æ®µé•¿åº¦(å¹³å°åˆ¤æ–­çº¿)  åˆ¤æ–­æ°´å¹³æ–¹å‘ä¸Šæ˜¯å¦é‡åˆ  
+			//å½“ä½ç½®åœ¨å¹³å°ä¸Šé¢ä¸”ç¢°æ’ç®±(position.y + size.y)ç©¿è¿‡å¹³å°æ—¶ å¹³å°çº¿çš„Yåæ ‡ä½äºç©å®¶çŸ©å½¢å†…éƒ¨ï¼ˆç©å®¶å½“å‰å¸§çš„YåŒºé—´å†…ï¼‰
 			bool is_collide_y = (shape.y >= position.y && shape.y <= position.y + size.y);
-			if (is_collide_x && is_collide_y) {//¼ÙÈçÖØºÏ  ÕâÒ»Ö¡µÄÎ»ÖÃÔÚÆ½Ì¨ÉÏÇÒÅö×²Ïä´©¹ıÆ½Ì¨
-				float delta_pos_y = velocity.y * delta;//¼ÆËãÏÂÂä¾àÀë(ÒÑ¾­·¢ÉúµÄÎ»ÒÆ)  ÕâÀïÓĞ¿ÉÄÜÊÇ¸ºÖµ
-				float last_tick_foot_pos_y = position.y + size.y - delta_pos_y;//¼ÆËãÉÏÒ»Ö¡½ÅµÄÎ»ÖÃ  ¿¼ÂÇÍæ¼Ò¡üµÄÇé¿ö
-				if (last_tick_foot_pos_y <= shape.y) {//¼ÙÈçÉÏÒ»Ö¡½ÅµÄÎ»ÖÃÔÚÆ½Ì¨ÉÏ
-					position.y = shape.y - size.y;//ÖØÖÃÎ»ÖÃ
-					velocity.y = 0;//ÖØÖÃËÙ¶È
+			if (is_collide_x && is_collide_y) {//å‡å¦‚é‡åˆ  è¿™ä¸€å¸§çš„ä½ç½®åœ¨å¹³å°ä¸Šä¸”ç¢°æ’ç®±ç©¿è¿‡å¹³å°
+				float delta_pos_y = velocity.y * delta;//è®¡ç®—ä¸‹è½è·ç¦»(å·²ç»å‘ç”Ÿçš„ä½ç§»)  è¿™é‡Œæœ‰å¯èƒ½æ˜¯è´Ÿå€¼
+				float last_tick_foot_pos_y = position.y + size.y - delta_pos_y;//è®¡ç®—ä¸Šä¸€å¸§è„šçš„ä½ç½®  è€ƒè™‘ç©å®¶â†‘çš„æƒ…å†µ
+				if (last_tick_foot_pos_y <= shape.y) {//å‡å¦‚ä¸Šä¸€å¸§è„šçš„ä½ç½®åœ¨å¹³å°ä¸Š
+					position.y = shape.y - size.y;//é‡ç½®ä½ç½®
+					velocity.y = 0;//é‡ç½®é€Ÿåº¦
 
-					if(last_velocity_y!=0)//¼ÙÈçÉÏÒ»Ö¡µÄËÙ¶È²»Îª0ÇÒÕâÒ»Ö¡ËÙ¶ÈÎª0 ËµÃ÷Íæ¼ÒÔÚÆ½Ì¨ÉÏÂäµØ
+					if(last_velocity_y!=0)//å‡å¦‚ä¸Šä¸€å¸§çš„é€Ÿåº¦ä¸ä¸º0ä¸”è¿™ä¸€å¸§é€Ÿåº¦ä¸º0 è¯´æ˜ç©å®¶åœ¨å¹³å°ä¸Šè½åœ°
 						on_land();
 					break;
 				}
@@ -328,19 +328,19 @@ void Player::move_and_collide(int delta) {
 		}
 	}
 
-	if (!is_invulnerable) {//µ±²»´¦ÓÚÎŞµĞ×´Ì¬Ê±²Å»á½øĞĞÅö×²¼ì²â
+	if (!is_invulnerable) {//å½“ä¸å¤„äºæ— æ•ŒçŠ¶æ€æ—¶æ‰ä¼šè¿›è¡Œç¢°æ’æ£€æµ‹
 		for (Bullet* bullet : bullet_list) {
-			if (!bullet->get_valid() || bullet->get_collide_target() != id) {//¼ÙÈç×Óµ¯ÎŞĞ§»òÕß×Óµ¯Ä¿±ê²»Îªµ±Ç°(±»¹¥»÷)Íæ¼Ò
+			if (!bullet->get_valid() || bullet->get_collide_target() != id) {//å‡å¦‚å­å¼¹æ— æ•ˆæˆ–è€…å­å¼¹ç›®æ ‡ä¸ä¸ºå½“å‰(è¢«æ”»å‡»)ç©å®¶
 				continue;
 			}
 
-			if (bullet->check_collision(position, size)) {//ÕâÀïµÄposition¾ÍÊÇµ±Ç°Óë×Óµ¯Åö×²µÄ¶ÔÏóµÄÎ»ÖÃ,ÕâÀïµÄbulletÊÇµĞ·½µÄ×Óµ¯
+			if (bullet->check_collision(position, size)) {//è¿™é‡Œçš„positionå°±æ˜¯å½“å‰ä¸å­å¼¹ç¢°æ’çš„å¯¹è±¡çš„ä½ç½®,è¿™é‡Œçš„bulletæ˜¯æ•Œæ–¹çš„å­å¼¹
 				make_invulnerable();
 				bullet->on_collide();
 				bullet->set_valid(false);
 				hp -= bullet->get_damage();
 				last_hunt_direction = bullet->get_position() - position;
-				if (hp <= 0) {//·ÉÆğÀ´!
+				if (hp <= 0) {//é£èµ·æ¥!
 					velocity.x = last_hunt_direction.x < 0 ? 0.35f : -0.35f;
 					velocity.y = -1.0f;
 				}

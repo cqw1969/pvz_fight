@@ -23,14 +23,14 @@ public:
 	void on_attack_ex() override;
 
 private:
-	void spawn_pea_bullet(float speed);//ÔÚ³¡¾°ÖĞÉú³ÉÒ»¸öÍã¶¹×Óµ¯
+	void spawn_pea_bullet(float speed);//åœ¨åœºæ™¯ä¸­ç”Ÿæˆä¸€ä¸ªè±Œè±†å­å¼¹
 
-	const float speed_pea = 0.75f;//Íã¶¹×Óµ¯ËÙ¶È
-	const float speed_pea_ex = 1.5f;//Íã¶¹×Óµ¯ËÙ¶È£¨ÌØÊâ£©
-	const int attack_ex_duration = 2500;//ÌØÊâ¹¥»÷³ÖĞøÊ±¼ä
+	const float speed_pea = 0.75f;//è±Œè±†å­å¼¹é€Ÿåº¦
+	const float speed_pea_ex = 1.5f;//è±Œè±†å­å¼¹é€Ÿåº¦ï¼ˆç‰¹æ®Šï¼‰
+	const int attack_ex_duration = 2500;//ç‰¹æ®Šæ”»å‡»æŒç»­æ—¶é—´
 
-	Timer timer_attack_ex;//ÌØÊâ¹¥»÷×´Ì¬¶¨Ê±Æ÷(³ÖĞøÊ±¼ä)
-	Timer timer_spawn_pea_ex;//Íã¶¹×Óµ¯·¢Éä¶¨Ê±Æ÷(³ÖĞøÊ±¼äÄÚµÄ¹¥»÷¼ä¸ô)
+	Timer timer_attack_ex;//ç‰¹æ®Šæ”»å‡»çŠ¶æ€å®šæ—¶å™¨(æŒç»­æ—¶é—´)
+	Timer timer_spawn_pea_ex;//è±Œè±†å­å¼¹å‘å°„å®šæ—¶å™¨(æŒç»­æ—¶é—´å†…çš„æ”»å‡»é—´éš”)
 };
 
 

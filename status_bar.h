@@ -14,12 +14,12 @@ class StatusBar
 		void set_avatar(IMAGE* img);
 		void on_draw();
 	private:
-		const int width = 275;//状态条宽度
+		const int width = 275;//鐘舵�佹潯瀹藉害
 
-		int hp = 0;//生命
-		int mp = 0;//能量
-		POINT position = { 0 };//位置
-		IMAGE* img_avatar = nullptr;//头像
+		int hp = 0;//鐢熷懡
+		int mp = 0;//鑳介噺
+		POINT position = { 0 };//浣嶇疆
+		IMAGE* img_avatar = nullptr;//澶村儚
 };
 
 

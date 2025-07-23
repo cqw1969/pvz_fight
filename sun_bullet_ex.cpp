@@ -17,8 +17,8 @@ SunBulletEx::SunBulletEx()
 	);
 
 	IMAGE* frame_idle = animation_idle.get_frame();
-	IMAGE* frame_explode = animation_explode.get_frame();//ÒÔÏÂµÄÁ½¸ö±äÁ¿ÀíÂÛÉÏÀ´ËµÓ¦¸ÃµÃÊÇ¸ºÊý
-	explode_render_offset.x = (frame_idle->getwidth() - frame_explode->getwidth()) / 2.0f;//¼ÆËã±¬Õ¨Ê±µÄäÖÈ¾Æ«ÒÆÁ¿
+	IMAGE* frame_explode = animation_explode.get_frame();//ä»¥ä¸‹çš„ä¸¤ä¸ªå˜é‡ç†è®ºä¸Šæ¥è¯´åº”è¯¥å¾—æ˜¯è´Ÿæ•°
+	explode_render_offset.x = (frame_idle->getwidth() - frame_explode->getwidth()) / 2.0f;//è®¡ç®—çˆ†ç‚¸æ—¶çš„æ¸²æŸ“åç§»é‡
 	explode_render_offset.y = (frame_idle->getheight() - frame_explode->getheight()) / 2.0f;
 }
 

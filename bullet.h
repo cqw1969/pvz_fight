@@ -35,17 +35,17 @@ public:
 	virtual void on_update(int delta);
 	virtual void on_draw(const Camera& camera) const;
 
-protected://È·±£×ÓÀà¿ÉÒÔ·ÃÎÊ»ùÀàµÄ³ÉÔ±
+protected://ç¡®ä¿å­ç±»å¯ä»¥è®¿é—®åŸºç±»çš„æˆå‘˜
 	bool check_if_exceeds_screen();
 
 	Vector2 size;
 	Vector2 position;
 	Vector2 velocity;
 	int damage = 10;
-	bool valid = true;							//×Óµ¯ÊÇ·ñ»¹ÓĞĞ§
-	bool can_remove = false;			//×Óµ¯ÊÇ·ñ¿ÉÒÔ±»É¾³ı
-	std::function<void()> callback;	//×Óµ¯Åö×²Ê±µÄ»Øµ÷º¯Êı
-	PlayerID target_id=PlayerID::P1;	//×Óµ¯µÄÄ¿±êÍæ¼Ò
+	bool valid = true;							//å­å¼¹æ˜¯å¦è¿˜æœ‰æ•ˆ
+	bool can_remove = false;			//å­å¼¹æ˜¯å¦å¯ä»¥è¢«åˆ é™¤
+	std::function<void()> callback;	//å­å¼¹ç¢°æ’æ—¶çš„å›è°ƒå‡½æ•°
+	PlayerID target_id=PlayerID::P1;	//å­å¼¹çš„ç›®æ ‡ç©å®¶
 };
 
 #endif // !_BULLET_H_

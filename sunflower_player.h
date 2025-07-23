@@ -30,8 +30,8 @@ public:
 
 
 private:
-	const float speed_sun_ex = 0.15f;//大型日光弹的下落速度
-	const Vector2 velocity_sun = { 0.25f,-0.5f };//小型日光炸弹抛射速度
+	const float speed_sun_ex = 0.15f;//澶у瀷鏃ュ厜寮圭殑涓嬭惤閫熷害
+	const Vector2 velocity_sun = { 0.25f,-0.5f };//灏忓瀷鏃ュ厜鐐稿脊鎶涘皠閫熷害
 
 	Animation animation_sun_text;
 	bool is_sun_text_visible = false;

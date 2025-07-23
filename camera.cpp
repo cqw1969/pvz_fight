@@ -1,9 +1,9 @@
 #include "camera.h"
 
-Camera::Camera()//ÓÃÒÔ½áÊøÒ¡»ÎĞ§¹û
+Camera::Camera()//ç”¨ä»¥ç»“æŸæ‘‡æ™ƒæ•ˆæœ
 {
     timer_shake.set_one_shot(true);
-    timer_shake.set_callback([&]() {//ÕâÀïµÄ&(ÒıÓÃ´«µİ)ÓÃÀ´¸Ä±ä¶¨ÒåÓòÍâ²¿±äÁ¿
+    timer_shake.set_callback([&]() {//è¿™é‡Œçš„&(å¼•ç”¨ä¼ é€’)ç”¨æ¥æ”¹å˜å®šä¹‰åŸŸå¤–éƒ¨å˜é‡
         is_shaking = false;
         reset();
     });
@@ -22,10 +22,10 @@ void Camera::reset() {
 
 void Camera::on_update(int delta)
 {
-    timer_shake.on_update(delta);//Ê±¼ä¿ªÊ¼×ª¶¯
+    timer_shake.on_update(delta);//æ—¶é—´å¼€å§‹è½¬åŠ¨
     if (is_shaking) {
-        //-50 + rand() % 100                ½«Ëæ»úÊı·¶Î§´Ó 0~99 Æ½ÒÆÎª - 50~49£¨¼´ - 50 µ½ + 49£©
-        //(-50 + rand() % 100) / 50.0f  ½«·¶Î§´Ó - 50~49 Ëõ·Åµ½ - 1.0 µ½ 0.98£¨½üËÆ - 1.0~1.0£©
+        //-50 + rand() % 100                å°†éšæœºæ•°èŒƒå›´ä» 0~99 å¹³ç§»ä¸º - 50~49ï¼ˆå³ - 50 åˆ° + 49ï¼‰
+        //(-50 + rand() % 100) / 50.0f  å°†èŒƒå›´ä» - 50~49 ç¼©æ”¾åˆ° - 1.0 åˆ° 0.98ï¼ˆè¿‘ä¼¼ - 1.0~1.0ï¼‰
         position.x = (-50 + rand() % 100) / 50.0f * shaking_strength;
         position.y = (-50 + rand() % 100) / 50.0f * shaking_strength;
     }

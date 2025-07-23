@@ -21,7 +21,7 @@ SunflowerPlayer::SunflowerPlayer(bool facing_right = true) : Player(facing_right
 	animation_die_left.set_interval(150);
 	animation_die_right.set_interval(150);
 
-	animation_attack_ex_left.set_loop(false);//ÕâÐ©¶¯»­²»ÐèÒªÑ­»·²¥·Å
+	animation_attack_ex_left.set_loop(false);//è¿™äº›åŠ¨ç”»ä¸éœ€è¦å¾ªçŽ¯æ’­æ”¾
 	animation_attack_ex_right.set_loop(false);
 	animation_sun_text.set_loop(false);
 	animation_die_left.set_loop(false);
@@ -54,7 +54,7 @@ void SunflowerPlayer::on_draw(const Camera& camera) {
 	if (is_sun_text_visible) {
 		Vector2 text_position;
 		IMAGE* frame=animation_sun_text.get_frame();
-		text_position.x = position.x - (size.x - frame->getwidth()) / 2;//Í·²¿¾ÓÖÐÏÔÊ¾
+		text_position.x = position.x - (size.x - frame->getwidth()) / 2;//å¤´éƒ¨å±…ä¸­æ˜¾ç¤º
 		text_position.y = position.y - frame->getheight();
 		animation_sun_text.on_draw(camera, (int)text_position.x, (int)text_position.y);
 	}

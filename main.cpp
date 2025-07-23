@@ -11,84 +11,84 @@
 #include <graphics.h>
 #pragma comment(lib,"winmm.lib")
 
-bool is_debug = false; // ÊÇ·ñ¿ªÆôµ÷ÊÔÄ£Ê½
+bool is_debug = false; // æ˜¯å¦å¼€å¯è°ƒè¯•æ¨¡å¼
 
-#pragma region {×ÊÔ´¼ÓÔØ´úÂë}
-//ËùĞè Í¼Æ¬/Í¼¼¯ ±äÁ¿µÄ¶¨Òå:
-//1.Ö÷²Ëµ¥±³¾° Í¼Æ¬
-IMAGE img_menu_background; // Ö÷²Ëµ¥±³¾°Í¼Æ¬
-//2.Ñ¡½Ç½çÃæµÄ×ÊÔ´ Í¼Æ¬
-IMAGE img_VS; // VS ÒÕÊõ×ÖÍ¼Æ¬
-IMAGE img_1P; // 1P ÎÄ±¾Í¼Æ¬
-IMAGE img_2P; // 2P ÎÄ±¾Í¼Æ¬
+#pragma region {èµ„æºåŠ è½½ä»£ç }
+//æ‰€éœ€ å›¾ç‰‡/å›¾é›† å˜é‡çš„å®šä¹‰:
+//1.ä¸»èœå•èƒŒæ™¯ å›¾ç‰‡
+IMAGE img_menu_background; // ä¸»èœå•èƒŒæ™¯å›¾ç‰‡
+//2.é€‰è§’ç•Œé¢çš„èµ„æº å›¾ç‰‡
+IMAGE img_VS; // VS è‰ºæœ¯å­—å›¾ç‰‡
+IMAGE img_1P; // 1P æ–‡æœ¬å›¾ç‰‡
+IMAGE img_2P; // 2P æ–‡æœ¬å›¾ç‰‡
 
-IMAGE img_1P_desc; // 1P ¼üÎ»ÃèÊöÍ¼Æ¬
-IMAGE img_2P_desc; // 2P ¼üÎ»ÃèÊöÍ¼Æ¬
+IMAGE img_1P_desc; // 1P é”®ä½æè¿°å›¾ç‰‡
+IMAGE img_2P_desc; // 2P é”®ä½æè¿°å›¾ç‰‡
 
-IMAGE img_gravestone_left; // ³¯Ïò×óµÄÄ¹±®Í¼Æ¬
-IMAGE img_gravestone_right; // ³¯ÏòÓÒµÄÄ¹±®Í¼Æ¬
+IMAGE img_gravestone_left; // æœå‘å·¦çš„å¢“ç¢‘å›¾ç‰‡
+IMAGE img_gravestone_right; // æœå‘å³çš„å¢“ç¢‘å›¾ç‰‡
 
-IMAGE img_selector_tip; // Ñ¡½Ç½çÃæÌáÊ¾ÎÄ±¾Í¼Æ¬
-IMAGE img_selector_background; // Ñ¡½Ç½çÃæ±³¾°Í¼Æ¬
-IMAGE img_1P_selector_btn_idle_left; // 1P Ïò×óÑ¡Ôñ°´Å¥Ä¬ÈÏ×´Ì¬Í¼Æ¬
-IMAGE img_1P_selector_btn_idle_right; // 1P ÏòÓÒÑ¡Ôñ°´Å¥Ä¬ÈÏ×´Ì¬Í¼Æ¬
-IMAGE img_1P_selector_btn_down_left; // 1P Ïò×óÑ¡Ôñ°´Å¥°´ÏÂ×´Ì¬Í¼Æ¬
-IMAGE img_1P_selector_btn_down_right; // 1P ÏòÓÒÑ¡Ôñ°´Å¥°´ÏÂ×´Ì¬Í¼Æ¬
+IMAGE img_selector_tip; // é€‰è§’ç•Œé¢æç¤ºæ–‡æœ¬å›¾ç‰‡
+IMAGE img_selector_background; // é€‰è§’ç•Œé¢èƒŒæ™¯å›¾ç‰‡
+IMAGE img_1P_selector_btn_idle_left; // 1P å‘å·¦é€‰æ‹©æŒ‰é’®é»˜è®¤çŠ¶æ€å›¾ç‰‡
+IMAGE img_1P_selector_btn_idle_right; // 1P å‘å³é€‰æ‹©æŒ‰é’®é»˜è®¤çŠ¶æ€å›¾ç‰‡
+IMAGE img_1P_selector_btn_down_left; // 1P å‘å·¦é€‰æ‹©æŒ‰é’®æŒ‰ä¸‹çŠ¶æ€å›¾ç‰‡
+IMAGE img_1P_selector_btn_down_right; // 1P å‘å³é€‰æ‹©æŒ‰é’®æŒ‰ä¸‹çŠ¶æ€å›¾ç‰‡
 
-IMAGE img_2P_selector_btn_idle_left; // 2P Ïò×óÑ¡Ôñ°´Å¥Ä¬ÈÏ×´Ì¬Í¼Æ¬
-IMAGE img_2P_selector_btn_idle_right; // 2P ÏòÓÒÑ¡Ôñ°´Å¥Ä¬ÈÏ×´Ì¬Í¼Æ¬
-IMAGE img_2P_selector_btn_down_left; // 2P Ïò×óÑ¡Ôñ°´Å¥°´ÏÂ×´Ì¬Í¼Æ¬
-IMAGE img_2P_selector_btn_down_right; // 2P ÏòÓÒÑ¡Ôñ°´Å¥°´ÏÂ×´Ì¬Í¼Æ¬
+IMAGE img_2P_selector_btn_idle_left; // 2P å‘å·¦é€‰æ‹©æŒ‰é’®é»˜è®¤çŠ¶æ€å›¾ç‰‡
+IMAGE img_2P_selector_btn_idle_right; // 2P å‘å³é€‰æ‹©æŒ‰é’®é»˜è®¤çŠ¶æ€å›¾ç‰‡
+IMAGE img_2P_selector_btn_down_left; // 2P å‘å·¦é€‰æ‹©æŒ‰é’®æŒ‰ä¸‹çŠ¶æ€å›¾ç‰‡
+IMAGE img_2P_selector_btn_down_right; // 2P å‘å³é€‰æ‹©æŒ‰é’®æŒ‰ä¸‹çŠ¶æ€å›¾ç‰‡
 
-IMAGE img_peashooter_selector_background_left; // Ñ¡½Ç½çÃæ³¯Ïò×óµÄÍñ¶ºÉäÊÖ±³¾°Í¼Æ¬
-IMAGE img_peashooter_selector_background_right; // Ñ¡½Ç½çÃæ³¯ÏòÓÒµÄÍñ¶ºÉäÊÖ±³¾°Í¼Æ¬
+IMAGE img_peashooter_selector_background_left; // é€‰è§’ç•Œé¢æœå‘å·¦çš„å©‰é€—å°„æ‰‹èƒŒæ™¯å›¾ç‰‡
+IMAGE img_peashooter_selector_background_right; // é€‰è§’ç•Œé¢æœå‘å³çš„å©‰é€—å°„æ‰‹èƒŒæ™¯å›¾ç‰‡
 
-IMAGE img_sunflower_selector_background_left; // Ñ¡½Ç½çÃæ³¯Ïò×óµÄÁúÈÕ¿û±³¾°Í¼Æ¬
-IMAGE img_sunflower_selector_background_right; // Ñ¡½Ç½çÃæ³¯ÏòÓÒµÄÁúÈÕ¿û±³¾°Í¼Æ¬
-//3.ÓÎÏ·½çÃæµÄ×ÊÔ´ Í¼Æ¬
-IMAGE img_sky; // Ìì¿ÕÍ¼Æ¬
-IMAGE img_hills; // É½ÂöÍ¼Æ¬
-IMAGE img_platform_large; // ´óĞÍÆ½Ì¨Í¼Æ¬
-IMAGE img_platform_small; // Ğ¡ĞÍÆ½Ì¨Í¼Æ¬
+IMAGE img_sunflower_selector_background_left; // é€‰è§’ç•Œé¢æœå‘å·¦çš„é¾™æ—¥è‘µèƒŒæ™¯å›¾ç‰‡
+IMAGE img_sunflower_selector_background_right; // é€‰è§’ç•Œé¢æœå‘å³çš„é¾™æ—¥è‘µèƒŒæ™¯å›¾ç‰‡
+//3.æ¸¸æˆç•Œé¢çš„èµ„æº å›¾ç‰‡
+IMAGE img_sky; // å¤©ç©ºå›¾ç‰‡
+IMAGE img_hills; // å±±è„‰å›¾ç‰‡
+IMAGE img_platform_large; // å¤§å‹å¹³å°å›¾ç‰‡
+IMAGE img_platform_small; // å°å‹å¹³å°å›¾ç‰‡
 
-IMAGE img_1P_cursor; // 1P Ö¸Ê¾¹â±êÍ¼Æ¬
-IMAGE img_2P_cursor; // 2P Ö¸Ê¾¹â±êÍ¼Æ¬
-//4.ÓÎÏ·(Õ½¶·)½çÃæ½ÇÉ«µÄµÄ×ÊÔ´ Í¼¼¯
-Atlas atlas_peashooter_idle_left; // Íñ¶ºÉäÊÖ³¯Ïò×óµÄÄ¬ÈÏ¶¯»­Í¼¼¯
-Atlas atlas_peashooter_idle_right; // Íñ¶ºÉäÊÖ³¯ÏòÓÒµÄÄ¬ÈÏ¶¯»­Í¼¼¯
-Atlas atlas_peashooter_run_left; // Íñ¶ºÉäÊÖ³¯Ïò×óµÄÅÜ²½¶¯»­Í¼¼¯
-Atlas atlas_peashooter_run_right; // Íñ¶ºÉäÊÖ³¯ÏòÓÒµÄÅÜ²½¶¯»­Í¼¼¯
-Atlas atlas_peashooter_attack_ex_left; // Íñ¶ºÉäÊÖ³¯Ïò×óµÄ¹¥»÷¶¯»­Í¼¼¯
-Atlas atlas_peashooter_attack_ex_right; // Íñ¶ºÉäÊÖ³¯ÏòÓÒµÄ¹¥»÷¶¯»­Í¼¼¯
-Atlas atlas_peashooter_die_left; // Íñ¶ºÉäÊÖ³¯Ïò×óµÄËÀÍö¶¯»­Í¼¼¯
-Atlas atlas_peashooter_die_right; // Íñ¶ºÉäÊÖ³¯ÏòÓÒµÄËÀÍö¶¯»­Í¼¼¯
-Atlas atlas_sunflower_idle_left; // ÁúÈÕ¿û³¯Ïò×óµÄÄ¬ÈÏ¶¯»­Í¼¼¯
-Atlas atlas_sunflower_idle_right; // ÁúÈÕ¿û³¯ÏòÓÒµÄÄ¬ÈÏ¶¯»­Í¼¼¯
-Atlas atlas_sunflower_run_left; // ÁúÈÕ¿û³¯Ïò×óµÄÅÜ²½¶¯»­Í¼¼¯
-Atlas atlas_sunflower_run_right; // ÁúÈÕ¿û³¯ÏòÓÒµÄÅÜ²½¶¯»­Í¼¼¯
-Atlas atlas_sunflower_attack_ex_left; // ÁúÈÕ¿û³¯Ïò×óµÄ¹¥»÷¶¯»­Í¼¼¯
-Atlas atlas_sunflower_attack_ex_right; // ÁúÈÕ¿û³¯ÏòÓÒµÄ¹¥»÷¶¯»­Í¼¼¯
-Atlas atlas_sunflower_die_left; // ÁúÈÕ¿û³¯Ïò×óµÄËÀÍö¶¯»­Í¼¼¯
-Atlas atlas_sunflower_die_right; // ÁúÈÕ¿û³¯ÏòÓÒµÄËÀÍö¶¯»­Í¼¼¯
-//5.ÓÎÏ·(Õ½¶·)½çÃæÆäËûµÄ×ÊÔ´ Í¼¼¯
-IMAGE img_pea; // Íã¶¹Í¼Æ¬
+IMAGE img_1P_cursor; // 1P æŒ‡ç¤ºå…‰æ ‡å›¾ç‰‡
+IMAGE img_2P_cursor; // 2P æŒ‡ç¤ºå…‰æ ‡å›¾ç‰‡
+//4.æ¸¸æˆ(æˆ˜æ–—)ç•Œé¢è§’è‰²çš„çš„èµ„æº å›¾é›†
+Atlas atlas_peashooter_idle_left; // å©‰é€—å°„æ‰‹æœå‘å·¦çš„é»˜è®¤åŠ¨ç”»å›¾é›†
+Atlas atlas_peashooter_idle_right; // å©‰é€—å°„æ‰‹æœå‘å³çš„é»˜è®¤åŠ¨ç”»å›¾é›†
+Atlas atlas_peashooter_run_left; // å©‰é€—å°„æ‰‹æœå‘å·¦çš„è·‘æ­¥åŠ¨ç”»å›¾é›†
+Atlas atlas_peashooter_run_right; // å©‰é€—å°„æ‰‹æœå‘å³çš„è·‘æ­¥åŠ¨ç”»å›¾é›†
+Atlas atlas_peashooter_attack_ex_left; // å©‰é€—å°„æ‰‹æœå‘å·¦çš„æ”»å‡»åŠ¨ç”»å›¾é›†
+Atlas atlas_peashooter_attack_ex_right; // å©‰é€—å°„æ‰‹æœå‘å³çš„æ”»å‡»åŠ¨ç”»å›¾é›†
+Atlas atlas_peashooter_die_left; // å©‰é€—å°„æ‰‹æœå‘å·¦çš„æ­»äº¡åŠ¨ç”»å›¾é›†
+Atlas atlas_peashooter_die_right; // å©‰é€—å°„æ‰‹æœå‘å³çš„æ­»äº¡åŠ¨ç”»å›¾é›†
+Atlas atlas_sunflower_idle_left; // é¾™æ—¥è‘µæœå‘å·¦çš„é»˜è®¤åŠ¨ç”»å›¾é›†
+Atlas atlas_sunflower_idle_right; // é¾™æ—¥è‘µæœå‘å³çš„é»˜è®¤åŠ¨ç”»å›¾é›†
+Atlas atlas_sunflower_run_left; // é¾™æ—¥è‘µæœå‘å·¦çš„è·‘æ­¥åŠ¨ç”»å›¾é›†
+Atlas atlas_sunflower_run_right; // é¾™æ—¥è‘µæœå‘å³çš„è·‘æ­¥åŠ¨ç”»å›¾é›†
+Atlas atlas_sunflower_attack_ex_left; // é¾™æ—¥è‘µæœå‘å·¦çš„æ”»å‡»åŠ¨ç”»å›¾é›†
+Atlas atlas_sunflower_attack_ex_right; // é¾™æ—¥è‘µæœå‘å³çš„æ”»å‡»åŠ¨ç”»å›¾é›†
+Atlas atlas_sunflower_die_left; // é¾™æ—¥è‘µæœå‘å·¦çš„æ­»äº¡åŠ¨ç”»å›¾é›†
+Atlas atlas_sunflower_die_right; // é¾™æ—¥è‘µæœå‘å³çš„æ­»äº¡åŠ¨ç”»å›¾é›†
+//5.æ¸¸æˆ(æˆ˜æ–—)ç•Œé¢å…¶ä»–çš„èµ„æº å›¾é›†
+IMAGE img_pea; // è±Œè±†å›¾ç‰‡
 
-Atlas atlas_pea_break; // Íã¶¹ÆÆËé¶¯»­Í¼¼¯
-Atlas atlas_sun; // ÈÕ¹â¶¯»­Í¼¼¯
-Atlas atlas_sun_explode; // ÈÕ¹â±¬Õ¨¶¯»­Í¼¼¯
-Atlas atlas_sun_ex; // ÌØÊâÈÕ¹â¶¯»­Í¼¼¯
-Atlas atlas_sun_ex_explode; // ÌØÊâÈÕ¹â±¬Õ¨¶¯»­Í¼¼¯
-Atlas atlas_sun_text; // ¡°ÈÕ¡± ÎÄ±¾¶¯»­Í¼¼¯
+Atlas atlas_pea_break; // è±Œè±†ç ´ç¢åŠ¨ç”»å›¾é›†
+Atlas atlas_sun; // æ—¥å…‰åŠ¨ç”»å›¾é›†
+Atlas atlas_sun_explode; // æ—¥å…‰çˆ†ç‚¸åŠ¨ç”»å›¾é›†
+Atlas atlas_sun_ex; // ç‰¹æ®Šæ—¥å…‰åŠ¨ç”»å›¾é›†
+Atlas atlas_sun_ex_explode; // ç‰¹æ®Šæ—¥å…‰çˆ†ç‚¸åŠ¨ç”»å›¾é›†
+Atlas atlas_sun_text; // â€œæ—¥â€ æ–‡æœ¬åŠ¨ç”»å›¾é›†
 
-Atlas atlas_run_effect; // ±¼ÅÜÌØĞ§¶¯»­Í¼¼¯
-Atlas atlas_jump_effect; // ÌøÔ¾ÌØĞ§¶¯»­Í¼¼¯
-Atlas atlas_land_effect; // ÂäµØÌØĞ§¶¯»­Í¼¼¯
-//6.ÓÎÏ·½áÊø½çÃæµÄ×ÊÔ´ Í¼¼¯
-IMAGE img_1P_winner; // 1P »ñÊ¤ÎÄ±¾Í¼Æ¬
-IMAGE img_2P_winner; // 2P »ñÊ¤ÎÄ±¾Í¼Æ¬
-IMAGE img_winner_bar; // »ñÊ¤Íæ¼Ò±³¾°ÎÄ±¾Í¼Æ¬
-IMAGE img_avatar_peashooter; // Íñ¶ºÉäÊÖÍ·ÏñÍ¼Æ¬
-IMAGE img_avatar_sunflower; // ÁúÈÕ¿ûÍ·ÏñÍ¼Æ¬
+Atlas atlas_run_effect; // å¥”è·‘ç‰¹æ•ˆåŠ¨ç”»å›¾é›†
+Atlas atlas_jump_effect; // è·³è·ƒç‰¹æ•ˆåŠ¨ç”»å›¾é›†
+Atlas atlas_land_effect; // è½åœ°ç‰¹æ•ˆåŠ¨ç”»å›¾é›†
+//6.æ¸¸æˆç»“æŸç•Œé¢çš„èµ„æº å›¾é›†
+IMAGE img_1P_winner; // 1P è·èƒœæ–‡æœ¬å›¾ç‰‡
+IMAGE img_2P_winner; // 2P è·èƒœæ–‡æœ¬å›¾ç‰‡
+IMAGE img_winner_bar; // è·èƒœç©å®¶èƒŒæ™¯æ–‡æœ¬å›¾ç‰‡
+IMAGE img_avatar_peashooter; // å©‰é€—å°„æ‰‹å¤´åƒå›¾ç‰‡
+IMAGE img_avatar_sunflower; // é¾™æ—¥è‘µå¤´åƒå›¾ç‰‡
 #pragma endregion
 
 Scene* menu_scene = nullptr;
@@ -197,7 +197,7 @@ void load_game_resources() {
 }
 
 int main() {
-	//³õÊ¼»¯
+	//åˆå§‹åŒ–
 	ExMessage msg;
 	const int FPS = 60;
 	load_game_resources();
@@ -213,20 +213,20 @@ int main() {
 	scene_manager.set_current_scene(menu_scene);
 	while (true) {
 		DWORD frame_start_time = GetTickCount();
-		//¶ÁÈ¡²Ù×÷
+		//è¯»å–æ“ä½œ
 		while (peekmessage(&msg)) {
 			scene_manager.on_input(msg);
 		}
 
-		//´¦ÀíÊı¾İ
+		//å¤„ç†æ•°æ®
 		static DWORD last_tick_time=GetTickCount();
 		DWORD current_tick_time=GetTickCount();
-		DWORD delta_tick=current_tick_time-last_tick_time;	//ÕâÀïµÄÃëÊıµ¥Î»ÊÇºÁÃë(1ÃëÏàµ±ÓÚÕâÀï1000)
+		DWORD delta_tick=current_tick_time-last_tick_time;	//è¿™é‡Œçš„ç§’æ•°å•ä½æ˜¯æ¯«ç§’(1ç§’ç›¸å½“äºè¿™é‡Œ1000)
 		scene_manager.on_update(delta_tick);
 		last_tick_time = current_tick_time;;
 
 
-		//»æÖÆ»­Ãæ
+		//ç»˜åˆ¶ç”»é¢
 		cleardevice();
 		scene_manager.on_draw(main_camera);
 		FlushBatchDraw();
@@ -238,5 +238,5 @@ int main() {
 		}
 	}
 	EndBatchDraw();
-	//ÊÍ·Å×ÊÔ´
+	//é‡Šæ”¾èµ„æº
 }

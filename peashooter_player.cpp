@@ -23,15 +23,15 @@ PeashooterPlayer::PeashooterPlayer(bool facing_right = true) : Player(facing_rig
 
 	size.x = 96, size.y = 96;
 
-	timer_attack_ex.set_wait_time(attack_ex_duration);//ÉèÖÃÌØÊâ¹¥»÷³ÖĞøÊ±¼ä
-	timer_attack_ex.set_one_shot(true);//³ÖĞøÊ±¼äÄÚÖ»·¢¶¯Ò»´Î
+	timer_attack_ex.set_wait_time(attack_ex_duration);//è®¾ç½®ç‰¹æ®Šæ”»å‡»æŒç»­æ—¶é—´
+	timer_attack_ex.set_one_shot(true);//æŒç»­æ—¶é—´å†…åªå‘åŠ¨ä¸€æ¬¡
 	timer_attack_ex.set_callback([&]() {
-			is_attacking_ex = false;//³ÖĞøÊ±¼äºó±ê¼ÇÌØÊâ¹¥»÷½áÊø
+			is_attacking_ex = false;//æŒç»­æ—¶é—´åæ ‡è®°ç‰¹æ®Šæ”»å‡»ç»“æŸ
 		});
 
-	timer_spawn_pea_ex.set_wait_time(100);//ÌØÊâ¹¥»÷×´Ì¬ÏÂ£¬Ã¿¸ô100ms·¢ÉäÒ»´ÎÍã¶¹×Óµ¯,±£³Ö¿ÉÒÔ¶à´Î´¥·¢µÄÄ¬ÈÏ×´Ì¬
+	timer_spawn_pea_ex.set_wait_time(100);//ç‰¹æ®Šæ”»å‡»çŠ¶æ€ä¸‹ï¼Œæ¯éš”100mså‘å°„ä¸€æ¬¡è±Œè±†å­å¼¹,ä¿æŒå¯ä»¥å¤šæ¬¡è§¦å‘çš„é»˜è®¤çŠ¶æ€
 	timer_spawn_pea_ex.set_callback([&]() {
-			spawn_pea_bullet(speed_pea_ex);//Éú³ÉËÙ¶È¸ü¿ìµÄ×Óµ¯
+			spawn_pea_bullet(speed_pea_ex);//ç”Ÿæˆé€Ÿåº¦æ›´å¿«çš„å­å¼¹
 		});
 
 	attack_cd = 100;
@@ -62,7 +62,7 @@ void PeashooterPlayer::on_attack()
 void PeashooterPlayer::on_attack_ex()
 {
 	is_attacking_ex = true;
-	timer_attack_ex.restart();//¼ÆÊ±¿ªÊ¼(Ã¿´Îµ÷ÓÃÊ±ÖØĞÂÆô¶¯)
+	timer_attack_ex.restart();//è®¡æ—¶å¼€å§‹(æ¯æ¬¡è°ƒç”¨æ—¶é‡æ–°å¯åŠ¨)
 	is_facing_right ?animation_attack_ex_right.reset() : animation_attack_ex_left.reset();
 	mciSendString(_T("play pea_shoot_ex from 0"), NULL, 0, NULL);
 }

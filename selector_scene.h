@@ -14,32 +14,32 @@ extern Player* player_2;
 extern IMAGE* img_player_1_avatar;
 extern IMAGE* img_player_2_avatar;
 
-#pragma region {×ÊÔ´¼ÓÔØ´úÂë}
-extern IMAGE img_VS; // VS ÒÕÊõ×ÖÍ¼Æ¬
-extern IMAGE img_1P; // 1P ÎÄ±¾Í¼Æ¬
-extern IMAGE img_2P; // 2P ÎÄ±¾Í¼Æ¬
-extern IMAGE img_1P_desc; // 1P ¼üÎ»ÃèÊöÍ¼Æ¬
-extern IMAGE img_2P_desc; // 2P ¼üÎ»ÃèÊöÍ¼Æ¬
-extern IMAGE img_gravestone_left; // ³¯Ïò×óµÄÄ¹±®Í¼Æ¬
-extern IMAGE img_gravestone_right; // ³¯ÏòÓÒµÄÄ¹±®Í¼Æ¬
-extern IMAGE img_selector_tip; // Ñ¡½Ç½çÃæÌáÊ¾ÎÄ±¾Í¼Æ¬
-extern IMAGE img_selector_background; // Ñ¡½Ç½çÃæ±³¾°Í¼Æ¬
-extern IMAGE img_1P_selector_btn_idle_left; // 1P Ïò×óÑ¡Ôñ°´Å¥Ä¬ÈÏ×´Ì¬Í¼Æ¬
-extern IMAGE img_1P_selector_btn_idle_right; // 1P ÏòÓÒÑ¡Ôñ°´Å¥Ä¬ÈÏ×´Ì¬Í¼Æ¬
-extern IMAGE img_1P_selector_btn_down_left; // 1P Ïò×óÑ¡Ôñ°´Å¥°´ÏÂ×´Ì¬Í¼Æ¬
-extern IMAGE img_1P_selector_btn_down_right; // 1P ÏòÓÒÑ¡Ôñ°´Å¥°´ÏÂ×´Ì¬Í¼Æ¬
-extern IMAGE img_2P_selector_btn_idle_left; // 2P Ïò×óÑ¡Ôñ°´Å¥Ä¬ÈÏ×´Ì¬Í¼Æ¬
-extern IMAGE img_2P_selector_btn_idle_right; // 2P ÏòÓÒÑ¡Ôñ°´Å¥Ä¬ÈÏ×´Ì¬Í¼Æ¬
-extern IMAGE img_2P_selector_btn_down_left; // 2P Ïò×óÑ¡Ôñ°´Å¥°´ÏÂ×´Ì¬Í¼Æ¬
-extern IMAGE img_2P_selector_btn_down_right; // 2P ÏòÓÒÑ¡Ôñ°´Å¥°´ÏÂ×´Ì¬Í¼Æ¬
-extern IMAGE img_peashooter_selector_background_left; // Ñ¡½Ç½çÃæ³¯Ïò×óµÄÍñ¶ºÉäÊÖ±³¾°Í¼Æ¬
-extern IMAGE img_peashooter_selector_background_right; // Ñ¡½Ç½çÃæ³¯ÏòÓÒµÄÍñ¶ºÉäÊÖ±³¾°Í¼Æ¬
-extern IMAGE img_sunflower_selector_background_left; // Ñ¡½Ç½çÃæ³¯Ïò×óµÄÁúÈÕ¿û±³¾°Í¼Æ¬
-extern IMAGE img_sunflower_selector_background_right; // Ñ¡½Ç½çÃæ³¯ÏòÓÒµÄÁúÈÕ¿û±³¾°Í¼Æ¬
-extern Atlas atlas_peashooter_idle_right; // Íñ¶ºÉäÊÖ³¯ÏòÓÒµÄÄ¬ÈÏ¶¯»­Í¼¼¯
-extern Atlas atlas_sunflower_idle_right; // ÁúÈÕ¿û³¯ÏòÓÒµÄÄ¬ÈÏ¶¯»­Í¼¼¯
-extern IMAGE img_avatar_peashooter; // Íñ¶ºÉäÊÖÍ·ÏñÍ¼Æ¬
-extern IMAGE img_avatar_sunflower; // ÁúÈÕ¿ûÍ·ÏñÍ¼Æ¬
+#pragma region {èµ„æºåŠ è½½ä»£ç }
+extern IMAGE img_VS; // VS è‰ºæœ¯å­—å›¾ç‰‡
+extern IMAGE img_1P; // 1P æ–‡æœ¬å›¾ç‰‡
+extern IMAGE img_2P; // 2P æ–‡æœ¬å›¾ç‰‡
+extern IMAGE img_1P_desc; // 1P é”®ä½æè¿°å›¾ç‰‡
+extern IMAGE img_2P_desc; // 2P é”®ä½æè¿°å›¾ç‰‡
+extern IMAGE img_gravestone_left; // æœå‘å·¦çš„å¢“ç¢‘å›¾ç‰‡
+extern IMAGE img_gravestone_right; // æœå‘å³çš„å¢“ç¢‘å›¾ç‰‡
+extern IMAGE img_selector_tip; // é€‰è§’ç•Œé¢æç¤ºæ–‡æœ¬å›¾ç‰‡
+extern IMAGE img_selector_background; // é€‰è§’ç•Œé¢èƒŒæ™¯å›¾ç‰‡
+extern IMAGE img_1P_selector_btn_idle_left; // 1P å‘å·¦é€‰æ‹©æŒ‰é’®é»˜è®¤çŠ¶æ€å›¾ç‰‡
+extern IMAGE img_1P_selector_btn_idle_right; // 1P å‘å³é€‰æ‹©æŒ‰é’®é»˜è®¤çŠ¶æ€å›¾ç‰‡
+extern IMAGE img_1P_selector_btn_down_left; // 1P å‘å·¦é€‰æ‹©æŒ‰é’®æŒ‰ä¸‹çŠ¶æ€å›¾ç‰‡
+extern IMAGE img_1P_selector_btn_down_right; // 1P å‘å³é€‰æ‹©æŒ‰é’®æŒ‰ä¸‹çŠ¶æ€å›¾ç‰‡
+extern IMAGE img_2P_selector_btn_idle_left; // 2P å‘å·¦é€‰æ‹©æŒ‰é’®é»˜è®¤çŠ¶æ€å›¾ç‰‡
+extern IMAGE img_2P_selector_btn_idle_right; // 2P å‘å³é€‰æ‹©æŒ‰é’®é»˜è®¤çŠ¶æ€å›¾ç‰‡
+extern IMAGE img_2P_selector_btn_down_left; // 2P å‘å·¦é€‰æ‹©æŒ‰é’®æŒ‰ä¸‹çŠ¶æ€å›¾ç‰‡
+extern IMAGE img_2P_selector_btn_down_right; // 2P å‘å³é€‰æ‹©æŒ‰é’®æŒ‰ä¸‹çŠ¶æ€å›¾ç‰‡
+extern IMAGE img_peashooter_selector_background_left; // é€‰è§’ç•Œé¢æœå‘å·¦çš„å©‰é€—å°„æ‰‹èƒŒæ™¯å›¾ç‰‡
+extern IMAGE img_peashooter_selector_background_right; // é€‰è§’ç•Œé¢æœå‘å³çš„å©‰é€—å°„æ‰‹èƒŒæ™¯å›¾ç‰‡
+extern IMAGE img_sunflower_selector_background_left; // é€‰è§’ç•Œé¢æœå‘å·¦çš„é¾™æ—¥è‘µèƒŒæ™¯å›¾ç‰‡
+extern IMAGE img_sunflower_selector_background_right; // é€‰è§’ç•Œé¢æœå‘å³çš„é¾™æ—¥è‘µèƒŒæ™¯å›¾ç‰‡
+extern Atlas atlas_peashooter_idle_right; // å©‰é€—å°„æ‰‹æœå‘å³çš„é»˜è®¤åŠ¨ç”»å›¾é›†
+extern Atlas atlas_sunflower_idle_right; // é¾™æ—¥è‘µæœå‘å³çš„é»˜è®¤åŠ¨ç”»å›¾é›†
+extern IMAGE img_avatar_peashooter; // å©‰é€—å°„æ‰‹å¤´åƒå›¾ç‰‡
+extern IMAGE img_avatar_sunflower; // é¾™æ—¥è‘µå¤´åƒå›¾ç‰‡
 #pragma endregion
 
 extern SceneManager scene_manager;
@@ -59,42 +59,42 @@ public:
 private:
 	enum class PlayerType {
 		Peashooter = 0, Sunflower, 
-		Invalid //ÎŞĞ§ÀàĞÍ  Í¬Ê±´ú±í×î´óÊıÁ¿
+		Invalid //æ— æ•ˆç±»å‹  åŒæ—¶ä»£è¡¨æœ€å¤§æ•°é‡
 	};
-	POINT pos_img_VS = { 0 };												// VS ÒÕÊõ×ÖÍ¼Æ¬Î»ÖÃ
-	POINT pos_img_tip = { 0 };												//ÌáÊ¾ĞÅÏ¢ÎÄ±¾Í¼Æ¬Î»ÖÃ
-	POINT pos_img_1P = { 0 };												// 1P ÎÄ±¾Í¼Æ¬Î»ÖÃ
-	POINT pos_img_2P = { 0 };												// 2P ÎÄ±¾Í¼Æ¬Î»ÖÃ
-	POINT pos_img_1P_desc = { 0 };										// 1P ¼üÎ»ÃèÊöÍ¼Æ¬Î»ÖÃ
-	POINT pos_img_2P_desc = { 0 };										// 2P ¼üÎ»ÃèÊöÍ¼Æ¬Î»ÖÃ
-	POINT pos_img_1P_name = { 0 };									//1P ½ÇÉ«ĞÕÃûÎÄ±¾Î»ÖÃ
-	POINT pos_img_2P_name = { 0 };									//2P ½ÇÉ«ĞÕÃûÎÄ±¾Î»ÖÃ
-	POINT pos_animation_1P = { 0 };									//1P ¶¯»­Î»ÖÃ
-	POINT pos_animation_2P = { 0 };									//2P ¶¯»­Î»ÖÃ
-	POINT pos_img_1P_gravestone = { 0 };							// 1P Ä¹±®Í¼Æ¬Î»ÖÃ
-	POINT pos_img_2P_gravestone = { 0 };							// 2P Ä¹±®Í¼Æ¬Î»ÖÃ
-	POINT pos_1P_selector_btn_left = { 0 };							// 1P Ïò×óÑ¡Ôñ°´Å¥Î»ÖÃ
-	POINT pos_1P_selector_btn_right = { 0 };						// 1P ÏòÓÒÑ¡Ôñ°´Å¥Î»ÖÃ
-	POINT pos_2P_selector_btn_left = { 0 };							// 2P Ïò×óÑ¡Ôñ°´Å¥Î»ÖÃ
-	POINT pos_2P_selector_btn_right = { 0 };						// 2P ÏòÓÒÑ¡Ôñ°´Å¥Î»ÖÃ
+	POINT pos_img_VS = { 0 };												// VS è‰ºæœ¯å­—å›¾ç‰‡ä½ç½®
+	POINT pos_img_tip = { 0 };												//æç¤ºä¿¡æ¯æ–‡æœ¬å›¾ç‰‡ä½ç½®
+	POINT pos_img_1P = { 0 };												// 1P æ–‡æœ¬å›¾ç‰‡ä½ç½®
+	POINT pos_img_2P = { 0 };												// 2P æ–‡æœ¬å›¾ç‰‡ä½ç½®
+	POINT pos_img_1P_desc = { 0 };										// 1P é”®ä½æè¿°å›¾ç‰‡ä½ç½®
+	POINT pos_img_2P_desc = { 0 };										// 2P é”®ä½æè¿°å›¾ç‰‡ä½ç½®
+	POINT pos_img_1P_name = { 0 };									//1P è§’è‰²å§“åæ–‡æœ¬ä½ç½®
+	POINT pos_img_2P_name = { 0 };									//2P è§’è‰²å§“åæ–‡æœ¬ä½ç½®
+	POINT pos_animation_1P = { 0 };									//1P åŠ¨ç”»ä½ç½®
+	POINT pos_animation_2P = { 0 };									//2P åŠ¨ç”»ä½ç½®
+	POINT pos_img_1P_gravestone = { 0 };							// 1P å¢“ç¢‘å›¾ç‰‡ä½ç½®
+	POINT pos_img_2P_gravestone = { 0 };							// 2P å¢“ç¢‘å›¾ç‰‡ä½ç½®
+	POINT pos_1P_selector_btn_left = { 0 };							// 1P å‘å·¦é€‰æ‹©æŒ‰é’®ä½ç½®
+	POINT pos_1P_selector_btn_right = { 0 };						// 1P å‘å³é€‰æ‹©æŒ‰é’®ä½ç½®
+	POINT pos_2P_selector_btn_left = { 0 };							// 2P å‘å·¦é€‰æ‹©æŒ‰é’®ä½ç½®
+	POINT pos_2P_selector_btn_right = { 0 };						// 2P å‘å³é€‰æ‹©æŒ‰é’®ä½ç½®
 
-	Animation animation_peashooter;									// Íñ¶ºÉäÊÖ¶¯»­
-	Animation animation_sunflower;									// ÁúÈÕ¿û¶¯»­
+	Animation animation_peashooter;									// å©‰é€—å°„æ‰‹åŠ¨ç”»
+	Animation animation_sunflower;									// é¾™æ—¥è‘µåŠ¨ç”»
 
-	PlayerType player_type_1=PlayerType::Peashooter;		// 1P ½ÇÉ«ÀàĞÍ
-	PlayerType player_type_2=PlayerType::Sunflower;			// 2P ½ÇÉ«ÀàĞÍ
+	PlayerType player_type_1=PlayerType::Peashooter;		// 1P è§’è‰²ç±»å‹
+	PlayerType player_type_2=PlayerType::Sunflower;			// 2P è§’è‰²ç±»å‹
 
-	LPCTSTR str_peashooter_name = _T("Íñ¶ºÉäÊÖ");			// Íñ¶ºÉäÊÖ½ÇÉ«Ãû
-	LPCTSTR str_sunflower_name = _T("ÁúÈÕ¿û");					// ÁúÈÕ¿û½ÇÉ«Ãû
+	LPCTSTR str_peashooter_name = _T("å©‰é€—å°„æ‰‹");			// å©‰é€—å°„æ‰‹è§’è‰²å
+	LPCTSTR str_sunflower_name = _T("é¾™æ—¥è‘µ");					// é¾™æ—¥è‘µè§’è‰²å
 
-	int selector_background_scorll_offset_x = 0;					// Ñ¡½Ç½çÃæ±³¾°Í¼Æ¬¹ö¶¯Æ«ÒÆÁ¿
+	int selector_background_scorll_offset_x = 0;					// é€‰è§’ç•Œé¢èƒŒæ™¯å›¾ç‰‡æ»šåŠ¨åç§»é‡
 
-	bool is_btn_1P_left_down = false;									// 1P Ïò×óÑ¡Ôñ°´Å¥°´ÏÂ×´Ì¬
-	bool is_btn_1P_right_down = false;									// 1P ÏòÓÒÑ¡Ôñ°´Å¥°´ÏÂ×´Ì¬
-	bool is_btn_2P_left_down = false;									// 2P Ïò×óÑ¡Ôñ°´Å¥°´ÏÂ×´Ì¬
-	bool is_btn_2P_right_down = false;									// 2P ÏòÓÒÑ¡Ôñ°´Å¥°´ÏÂ×´Ì¬
+	bool is_btn_1P_left_down = false;									// 1P å‘å·¦é€‰æ‹©æŒ‰é’®æŒ‰ä¸‹çŠ¶æ€
+	bool is_btn_1P_right_down = false;									// 1P å‘å³é€‰æ‹©æŒ‰é’®æŒ‰ä¸‹çŠ¶æ€
+	bool is_btn_2P_left_down = false;									// 2P å‘å·¦é€‰æ‹©æŒ‰é’®æŒ‰ä¸‹çŠ¶æ€
+	bool is_btn_2P_right_down = false;									// 2P å‘å³é€‰æ‹©æŒ‰é’®æŒ‰ä¸‹çŠ¶æ€
 
-	void outtextxy_shaded(int x, int y, LPCTSTR str);			// »æÖÆ´øÓĞÒõÓ°µÄÎÄ±¾
+	void outtextxy_shaded(int x, int y, LPCTSTR str);			// ç»˜åˆ¶å¸¦æœ‰é˜´å½±çš„æ–‡æœ¬
 };
 
 

@@ -18,7 +18,7 @@ public:
 	void on_draw(const Camera& camera) const override;
 
 private:
-	Animation animation_break; //Íã¶¹×Óµ¯ÆÆËé¶¯»­
+	Animation animation_break; //è±Œè±†å­å¼¹ç ´ç¢åŠ¨ç”»
 };
 
 

@@ -34,9 +34,9 @@ void Timer::on_update(int delta) {
 	}
 	pass_time += delta;
 	if (pass_time >= wait_time) {
-		if ((!one_shot || (one_shot && !shotted)) && callback) //如果是单次触发且未触发过(如果不是单次触发)，则触发回调函数
+		if ((!one_shot || (one_shot && !shotted)) && callback) //濡傛灉鏄崟娆¤Е鍙戜笖鏈Е鍙戣繃(濡傛灉涓嶆槸鍗曟瑙﹀彂)锛屽垯瑙﹀彂鍥炶皟鍑芥暟
 			callback();
-		shotted=true;		//标记为已触发
-		pass_time = 0;		//重来
+		shotted=true;		//鏍囪涓哄凡瑙﹀彂
+		pass_time = 0;		//閲嶆潵
 	}
 }
